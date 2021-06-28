@@ -8,6 +8,7 @@
     <link rel= 'stylesheet' href="/main.css">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+    <script src="/navController.js"></script>
 </head>
 <body>
     <div class="search-wrapper">
@@ -49,5 +50,39 @@
     </div>
 </div>
    
+
+
+<div class="bottom-navigation">
+    <div class="bottom-wrapper">
+        <button id="lIcon" onclick="listenNav()" class="default bottom-item ">
+            <div class="bottom-icon">
+                <img class="default-icon bicon" id="bicon1" src="Assets/home-24px.svg">
+            </div>
+            <p id="s1text">Home</p>
+        </button>
+ 
+        <button id="eIcon" onclick="eventsNav()" class="bottom-item">
+         <div class="bottom-icon">
+             <img id="bicon2" class="bicon" src="assets/account_circle-24px.svg">
+         </div>
+         <p id="s2text">Rewards</p>
+     </button>
+ 
+     <button id="cIcon" onclick="contestNav()" class="bottom-item">
+         <div  class="bottom-icon">
+             <img class="bicon" id="bicon3" src="Assets/shopping_cart-24px (3).svg">
+         </div>
+         <p id="s3text">Cart</p>
+     </button>
+ 
+     <button id="coIcon" onclick="contactNav()" class="bottom-item">
+         <div class="bottom-icon">
+             <img class="bicon" id="bicon4" src="assets/payment_black_24dp.svg">
+         </div>
+         <p id="s4text">Payments</p>
+     </button>
+    </div>
+ </div>
+ 
 </body>
 </html>
