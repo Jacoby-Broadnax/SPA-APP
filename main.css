@@ -6,10 +6,30 @@
 
 /*----------------Search--------------*/
 
-.search-input {width: 100%;height: 42px;background-color: #EEEEF0;border: none;padding-left: 50px;font-size: 16px;border-radius: 10px;}
+.search-input {width: 100%;height: 37px;background-color: #EEEEF0;border: none;padding-left: 50px;font-size: 16px;border-radius: 10px;}
 
-.search-field > img {position: absolute;margin-top: 9px;margin-left: 14px;}
+.search-field > img {position: absolute;margin-top: 7px;margin-left: 14px;}
 
 .search-field {width: 80%;margin-left: -50px;}
 
 .search-wrapper {display: flex;justify-content: center;margin-top: 15px;}
+
+/*--------------Product Styling---------------*/
+
+.product-wrapper {}
+
+.product-list {width: 100%;overflow-x: scroll;white-space: nowrap;}
+
+.product-item {width:130px ;display: inline-block;margin-left: 10px;}
+
+.product-item > img {width: 100%; border-radius: 12px;}
+
+.product-text > h3 {font-size: 14px;font-weight: 600;}
+
+.product-text > p {font-size: 13px;;}
+
+.product-spacer {display: inline-block;width: 0px;;}
+
+.product-title > h2 {font-size: 16px;font-weight: 600;}
+
+.product-title {margin-left: 13px;;margin-top: 20px;margin-bottom: 10px;}
