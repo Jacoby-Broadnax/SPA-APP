@@ -20,13 +20,13 @@
 
 .product-list {width: 100%;overflow-x: scroll;white-space: nowrap;}
 
-.product-item {width:142px ;display: inline-block;margin-left: 10px;}
+.product-item {width:142px ;display: inline-block;margin-left: 10px;vertical-align: top;}
 
 .product-item > img {width: 100%; border-radius: 12px;}
 
 .product-text > h3 {font-size: 14px;font-weight: 600;}
 
-.product-text > p {font-size: 14px;;}
+.product-text > p {font-size: 14px;width: 100%;white-space: pre-wrap;}
 
 .product-spacer {display: inline-block;width: 0px;;}
 
