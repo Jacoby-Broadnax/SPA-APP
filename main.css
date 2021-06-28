@@ -20,7 +20,7 @@
 
 .product-list {width: 100%;overflow-x: scroll;white-space: nowrap;}
 
-.product-item {width:130px ;display: inline-block;margin-left: 10px;}
+.product-item {width:142px ;display: inline-block;margin-left: 10px;}
 
 .product-item > img {width: 100%; border-radius: 12px;}
 
