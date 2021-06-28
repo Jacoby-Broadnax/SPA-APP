@@ -22,7 +22,7 @@
 
 .product-item {width:142px ;display: inline-block;margin-left: 10px;vertical-align: top;}
 
-.product-item > img {width: 100%; border-radius: 12px;}
+.product-item > img {width: 100%; border-radius: 12px; box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);background-color: transparent;}
 
 .product-text > h3 {font-size: 14px;font-weight: 600;}
 
