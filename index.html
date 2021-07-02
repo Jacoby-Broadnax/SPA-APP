@@ -26,12 +26,12 @@
 
 <div id="gradproducts"></div>
 </section>
-<div class="dyn-sheet">
+<div id="dyn-sheet" class="dyn-sheet">
 <div class="sheet-title">
-    <h2>Sheet Null Data</h2>
-    <button class="close-sheet">Close</button>
+    <h2 id="sheetTitle">Sheet Null Data</h2>
+    <button onclick="dynClose()" class="close-sheet">Close</button>
 </div>
-<iframe class="sheet-frame" src=""></iframe>
+<iframe id="sheetFrame" class="sheet-frame" src=""></iframe>
 </div>
 
 <div class="bottom-navigation">
@@ -84,7 +84,7 @@
         <div class="product-spacer"></div>
     {{#each this}}
   
-    <div onclick="dynSheet()" class="product-item">
+    <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item">
         <img src="gradproducts/grad{{id}}.webp">
         <div class="product-text">
             <h3>${{summary}}.00</h3>
