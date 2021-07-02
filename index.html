@@ -12,9 +12,15 @@
     <script src="/actionSheet.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="stylesheet" href="/vivify.min.css">
     <meta name="theme-color" content="#171717">
 </head>
 <body>
+
+<div class="item-loader" id="item-loader">
+    <img  src="https://i.gifer.com/ZZ5H.gif">
+</div>
+
    <section id="homepage">
     <div class="search-wrapper">
         <div class="search-field">
@@ -26,12 +32,12 @@
 
 <div id="gradproducts"></div>
 </section>
-<div id="dyn-sheet" class="dyn-sheet">
+<div id="dyn-sheet" class="dyn-sheet vivify fadeIn duration-300">
 <div class="sheet-title">
     <h2 id="sheetTitle">Sheet Null Data</h2>
     <button onclick="dynClose()" class="close-sheet">Close</button>
 </div>
-<iframe id="sheetFrame" class="sheet-frame" src=""></iframe>
+<iframe onload="document.getElementById('item-loader').style.display='none';document.getElementById('dyn-sheet').style.display = 'block';" id="sheetFrame" class="sheet-frame" src=""></iframe>
 </div>
 
 <div class="bottom-navigation">
