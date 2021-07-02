@@ -24,9 +24,12 @@
 
 .product-item {width:142px ;display: inline-block;margin-left: 10px;vertical-align: top;margin-top: 7px;}
 
-.product-item > img {width: 100%; border-radius: 12px; background-color: transparent;object-fit: cover;height: 142px;border: solid 1px lightgray;}
+.product-item > img {width: 100%; border-radius: 6px; background-color: transparent;object-fit: cover;height: 142px;border: solid 1px lightgray;}
 
-.product-text > h3 {font-size: 14px;font-weight: 600;}
+.product-text > h3 {font-size: 14px;font-weight: 600;width: 100%;
+  white-space: pre-wrap;
+}
+
 
 .product-text > p {font-size: 14px;width: 100%;white-space: pre-wrap;}
 

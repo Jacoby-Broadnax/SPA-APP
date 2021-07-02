@@ -9,50 +9,23 @@
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
     <script src="/navController.js"></script>
+    <script src="/actionSheet.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="theme-color" content="#171717">
 </head>
 <body>
+   <section id="homepage">
     <div class="search-wrapper">
         <div class="search-field">
             <img src="/assets/search-24px (1).svg">
             <input placeholder="" class="search-input" type="text">
         </div>
     </div>
-<div class="product-wrapper">
-    <div class="product-title">
-        <h2>Senior Grad Products</h2>
-    </div>
- <div class="product-list">
-     <div class="product-spacer"></div>
 
-        <div class="product-item">
-            <img src="products/NoPath - Copy (8).png">
-            <div class="product-text">
-                <h3>$36.00</h3>
-                <p>Class of 2021 Hoodie</p>
-            </div>
-        </div>
 
-        <div class="product-item">
-            <img src="products/NoPath - Copy (3).png">
-            <div class="product-text">
-                <h3>$36.00</h3>
-                <p>Class of 2021 Hoodie With Free T-shirt</p>
-            </div>
-        </div>
-
-        <div class="product-item">
-            <img src="products/NoPath - Copy (8).png">
-            <div class="product-text">
-                <h3>$36.00</h3>
-                <p>Class of 2021 Hoodie</p>
-            </div>
-        </div>
-    </div>
-</div>
-   
+<div id="gradproducts"></div>
+</section>
 <div class="dyn-sheet">
 
 </div>
@@ -89,5 +62,35 @@
     </div>
  </div>
  
+ <script type="text/javascript">
+    $(document).ready(function () {
+      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/spa/gradproducts', function (data) {
+        var template = Handlebars.compile($('#item-templateA').html())
+        $('#gradproducts').html(template(data.gradproducts))
+      })
+    })
+  </script>
+
+  <script id="item-templateA" type="text/x-handlebars-template">
+    <div class="product-wrapper">
+        <div class="product-title">
+            <h2>Senior Grad Products</h2>
+        </div>
+     <div class="product-list">
+        <div class="product-spacer"></div>
+    {{#each this}}
+  
+    <div onclick="dynSheet()" class="product-item">
+        <img src="gradproducts/grad{{id}}.webp">
+        <div class="product-text">
+            <h3>${{summary}}.00</h3>
+            <p>{{title}}</p>
+        </div>
+    </div>
+     
+      {{/each}}
+      </div>
+      </div>   
+  </script>
 </body>
 </html>
