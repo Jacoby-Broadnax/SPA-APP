@@ -11,8 +11,6 @@
     <meta name="theme-color" content="#ffffff">
     
     <title>SPA App</title>
-    <script src="dist/loading-attribute-polyfill.umd.js" async></script>
-    <link rel="stylesheet" href="dist/loading-attribute-polyfill.css" />
     <link rel= 'stylesheet' href="/main.css">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
@@ -27,6 +25,22 @@
     <img  src="https://i.gifer.com/ZZ5H.gif">
     <p>Loading Product...</p>
 </div>
+
+<div id="cartConfirm" class="cart-confirm vivify fadeInRight">
+    <div class="confirm-wrapper">
+        <img src="/assets/shopping_cart_black_24dp.svg">
+        <div class="confirm-text">
+            <h4>Added To Cart</h4>
+            <p id="cartItem">Placeholder Text</p>
+        </div>
+    </div>
+    
+</div>
+
+<section id="cartpage">
+    <iframe class="cart-frame" src=""></iframe>
+    </section>
+
 
    <section id="homepage">
        <h1  class="page-title">Home</h1>
@@ -43,6 +57,8 @@
 <div class="item-wrapper" id="rings"></div>
 
 </section>
+
+
 <div id="dyn-sheet" class="dyn-sheet ">
 <div class="sheet-title">
     <div class="title-wrapper">
@@ -55,7 +71,7 @@
     <img src="/gradproducts/grad11.webp">
     <h4>2021 Sherpa Style Pullover</h4>
 </div>
-<iframe onload="document.getElementById('item-loader').style.display='none';document.getElementById('dyn-sheet').style.display = 'block';" id="sheetFrame" class="sheet-frame vivify fadeIn duration-300" src="https://spa.ms/test2/?utm_source=rss&utm_medium=rss&utm_campaign=test2"></iframe>
+<iframe onload="document.getElementById('item-loader').style.display='none';" id="sheetFrame" class="sheet-frame vivify fadeIn duration-300 delay-1250" src="https://spa.ms/test2/?utm_source=rss&utm_medium=rss&utm_campaign=test2"></iframe>
 </div>
 
 <div class="bottom-navigation">
@@ -108,7 +124,7 @@
         <div class="product-spacer"></div>
     {{#each this}}
   
-    <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item">
+    <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00">
         <img src="gradproducts/grad{{id}}.webp">
         <div class="product-text">
             <h3>${{summary}}.00</h3>
@@ -185,6 +201,20 @@
       {{/each}}
       </div>
       </div>   
+  </script>
+  <script>
+  window.addEventListener('message', function(e) {
+  if(e.data == "addCart"){
+   document.getElementById('dyn-sheet').style.display='none'
+   document.getElementById('cartItem').innerHTML = document.getElementById('sheetTitle').innerHTML;
+   document.getElementById('cartConfirm').style.display='block' 
+setTimeout(function(){  
+    document.getElementById('cartConfirm').style.display='none' 
+}, 10000);
+  
+   
+  }
+});
   </script>
 </body>
 </html>
