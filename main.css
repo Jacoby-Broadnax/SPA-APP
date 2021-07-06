@@ -36,7 +36,7 @@
 
 .search-field {width: 80%;margin-left: -50px;}
 
-.search-wrapper {display: flex;justify-content: center;margin-top: 15px;}
+.search-wrapper {display: flex;justify-content: center;margin-top: 15px;display: none;}
 
 /*--------------Product Styling---------------*/
 
