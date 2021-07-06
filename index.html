@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/vivify.min.css">
     <meta name="theme-color" content="#171717">
 </head>
-<body>
+<body onload="document.getElementById('dyn-sheet').style.display = 'none';">
 
 <div class="item-loader" id="item-loader">
     <img  src="https://i.gifer.com/ZZ5H.gif">
@@ -31,13 +31,20 @@
 
 
 <div id="gradproducts"></div>
+<div id="gear"></div>
+<div id="rings"></div>
+
 </section>
-<div id="dyn-sheet" class="dyn-sheet vivify fadeIn duration-300">
+<div id="dyn-sheet" class="dyn-sheet ">
 <div class="sheet-title">
     <h2 id="sheetTitle">Sheet Null Data</h2>
     <button onclick="dynClose()" class="close-sheet">Done</button>
 </div>
-<iframe onload="document.getElementById('item-loader').style.display='none';document.getElementById('dyn-sheet').style.display = 'block';" id="sheetFrame" class="sheet-frame" src=""></iframe>
+<div class="product-overlay">
+    <img src="/gradproducts/grad11.webp">
+    <h4>2021 Sherpa Style Pullover</h4>
+</div>
+<iframe onload="document.getElementById('item-loader').style.display='none';document.getElementById('dyn-sheet').style.display = 'block';" id="sheetFrame" class="sheet-frame vivify fadeIn duration-300" src="https://spa.ms/test2/?utm_source=rss&utm_medium=rss&utm_campaign=test2"></iframe>
 </div>
 
 <div class="bottom-navigation">
@@ -94,6 +101,71 @@
         <img src="gradproducts/grad{{id}}.webp">
         <div class="product-text">
             <h3>${{summary}}.00</h3>
+            <p>{{title}}</p>
+        </div>
+    </div>
+     
+      {{/each}}
+      </div>
+      </div>   
+  </script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/spa/gear', function (data) {
+        var template = Handlebars.compile($('#item-templateB').html())
+        $('#gear').html(template(data.gear))
+      })
+    })
+  </script>
+
+  <script id="item-templateB" type="text/x-handlebars-template">
+    <div class="product-wrapper">
+        <div class="product-title">
+            <h2>Class Gear</h2>
+        </div>
+     <div class="product-list">
+        <div class="product-spacer"></div>
+    {{#each this}}
+  
+    <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item">
+        <img src="gear/gear{{id}}.png">
+        <div class="product-text">
+            <h3>${{summary}}.00</h3>
+            <p>{{title}}</p>
+        </div>
+    </div>
+     
+      {{/each}}
+      </div>
+      </div>   
+  </script>
+
+
+  
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/spa/rings', function (data) {
+        var template = Handlebars.compile($('#item-templateC').html())
+        $('#rings').html(template(data.rings))
+      })
+    })
+  </script>
+
+  <script id="item-templateC" type="text/x-handlebars-template">
+    <div class="product-wrapper">
+        <div class="product-title">
+            <h2>Mens Rings</h2>
+        </div>
+     <div class="product-list">
+        <div class="product-spacer"></div>
+    {{#each this}}
+  
+    <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item">
+        <img src="rings/{{title}}.png">
+        <div class="product-text">
+            <h3>${{summary}}</h3>
             <p>{{title}}</p>
         </div>
     </div>
