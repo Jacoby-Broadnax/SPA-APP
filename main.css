@@ -169,7 +169,7 @@
   padding-left: 12px;
 }
 
-.form {margin-top: 30px;}
+
 
 .halfed > label {font-weight: 600; font-size: 14px; ;}
 
@@ -182,9 +182,11 @@
 .flattened {width: 95%;}
 
 
-.form {margin: auto;width: 90%;}
+.form {margin: auto;width: 90%;margin-top: 30px;}
 
 .halfed-input {margin-bottom: 15px;}
+
+.select-input {width: 107%;}
 
 .flattened {margin-bottom: 15px;}
 
