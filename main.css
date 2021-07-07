@@ -136,7 +136,21 @@
 
 .feed-text > p {font-size: 13px;color: #656565;}
 
+.wrap-fixed {position: fixed;bottom: 20px; left: 0px; width: 100%; ;}
 
+.large-wrap {margin: auto;
+  width: 90%;}
+
+.large-confirm {width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #003AFF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
 /*--------------Cart Styling-----------------*/
 
 .cart-frame {position: fixed;
