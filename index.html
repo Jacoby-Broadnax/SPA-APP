@@ -81,35 +81,35 @@
 
         <div class="halfed-input">
             <div class="halfed first-half">
-                <label>First Name</label>
+                <label>First Name*</label>
                 <br>
-                <input oninput="accountStore('fname', document.getElementById('fname').value)" class="text-input " id="fname" type="text">
+                <input required oninput="accountStore('fname', document.getElementById('fname').value)" class="text-input " id="fname" type="text">
             </div>
             
             <div class="halfed">
-                <label>Last Name</label>
+                <label>Last Name*</label>
                 <br>
-                <input oninput="accountStore('lname', document.getElementById('lname').value)" class="text-input " id="lname" type="text">
+                <input required oninput="accountStore('lname', document.getElementById('lname').value)" class="text-input " id="lname" type="text">
             </div>   
         </div>
 
         
 
-        <label>Email</label>
+        <label>Email*</label>
         <br>
-        <input oninput="accountStore('email', document.getElementById('email').value)" class="text-input flattened" type="email" id="email">
+        <input required oninput="accountStore('email', document.getElementById('email').value)" class="text-input flattened" type="email" id="email">
 
         
 
         <div class="halfed-input">
             <div class=" halfed first-half">
-                <label>Phone Number</label>
+                <label>Phone Number*</label>
                 <br>
-                <input oninput="accountStore('number', document.getElementById('number').value)" class="text-input " id="number" type="tel">
+                <input required oninput="accountStore('number', document.getElementById('number').value)" class="text-input " id="number" type="tel">
             </div>
          
             <div class=" halfed">
-                <label>School</label>
+                <label>School*</label>
                 <br>
                <div id="schools">
                    </div>
@@ -363,7 +363,7 @@
 
   <script id="item-templateE" type="text/x-handlebars-template">
 
-    <select onchange="accountStore('school', document.getElementById('school').value)" id="school" class="text-input select-input">
+    <select required onchange="accountStore('school', document.getElementById('school').value)" id="school" class="text-input select-input">
         <option value="" selected disabled hidden>Select School</option>
 
     {{#each this}}
