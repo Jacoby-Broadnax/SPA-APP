@@ -5,6 +5,9 @@ function cartNav(){
     document.getElementById('coIcon').style.opacity = "0.5";
     document.getElementById('cartpage').style.display = "block";
     document.getElementById('homepage').style.display = "none";
+    setTimeout(function(){  
+        document.getElementById('cartConfirm').style.bottom = "-70px"
+    }, 300);
   
 }
 

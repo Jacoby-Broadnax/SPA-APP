@@ -119,6 +119,16 @@
 
 #cartpage {display: none;}
 
+.cart-empty {position: absolute;
+  top: 92px;
+  height: 78vh;
+  background-color: white;
+  width: 100%;
+  left: 0px;
+  z-index: 150;}
+
+.cart-empty > h3 {width: 100%; font-size: 15px; font-weight: normal;text-align: center;margin-top: 30px;}
+
 .cart-confirm {position: fixed; bottom: -70px; left: 0px; width: 100%;z-index: 150;transition: 0.3s ease}
 
 .confirm-wrapper {

@@ -38,6 +38,9 @@
 </div>
 
 <section id="cartpage">
+    <div class="cart-empty " id="cartEmpty">
+       <h3 class="vivify fadeIn">Your Carts Empty</h3> 
+    </div>
     <iframe class="cart-frame" id="cartFrame" src="https://spa.ms/cart"></iframe>
     </section>
 
@@ -207,7 +210,8 @@
   if(e.data == "addCart"){
    document.getElementById('dyn-sheet').style.display='none'
    document.getElementById('cartItem').innerHTML = document.getElementById('sheetTitle').innerHTML;
-   document.getElementById('cartFrame').src="https://spa.ms/cart"
+   document.getElementById('cartFrame').src="https://spa.ms/cart";
+   localStorage.setItem('cartState', 'true');
 
    setTimeout(function(){  
     document.getElementById('cartConfirm').style.bottom = "96px"
@@ -215,15 +219,32 @@
 setTimeout(function(){  
     document.getElementById('cartConfirm').style.bottom = "-70px"
 }, 4500);
-  
+cartCheck()
    
   }
 
-  if(e.data == "addCart"){
-
-   
+  if(e.data == "emptyCart"){
+    localStorage.setItem('cartState', 'false');
+    cartCheck()
   }
 });
+
+function cartCheck(){
+    if(localStorage.getItem('cartState') == null){
+    document.getElementById('cartEmpty').style.display= 'block';
+}
+
+if(localStorage.getItem('cartState') == 'false'){
+    document.getElementById('cartEmpty').style.display= 'block';
+}
+
+if(localStorage.getItem('cartState') == 'true'){
+    document.getElementById('cartEmpty').style.display= 'none';
+}
+}
+
+cartCheck()
+
   </script>
 </body>
 </html>
