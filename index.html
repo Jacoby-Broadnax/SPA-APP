@@ -26,7 +26,7 @@
     <p>Loading Product...</p>
 </div>
 
-<div id="cartConfirm" class="cart-confirm">
+<div onclick="cartNav()" id="cartConfirm" class="cart-confirm">
     <div class="confirm-wrapper">
         <img src="/assets/shopping_cart_black_24dp.svg">
         <div class="confirm-text">
@@ -38,7 +38,7 @@
 </div>
 
 <section id="cartpage">
-    <iframe class="cart-frame" src=""></iframe>
+    <iframe class="cart-frame" id="cartFrame" src="https://spa.ms/cart"></iframe>
     </section>
 
 
@@ -90,7 +90,7 @@
          <p id="s2text">Rewards</p>
      </button>
  
-     <button id="cIcon" onclick="contestNav()" class="bottom-item">
+     <button id="cIcon" onclick="cartNav()" class="bottom-item">
          <div  class="bottom-icon">
              <img class="bicon" id="bicon3" src="Assets/shopping_cart-24px (3).svg">
          </div>
@@ -118,7 +118,7 @@
   <script id="item-templateA" type="text/x-handlebars-template">
     <div class="product-wrapper">
         <div class="product-title">
-            <h2>Senior Grad Products</h2>
+            <h2 class="vivify fadeIn duration-300">Senior Grad Products</h2>
         </div>
      <div class="product-list">
         <div class="product-spacer"></div>
@@ -150,16 +150,16 @@
   <script id="item-templateB" type="text/x-handlebars-template">
     <div class="product-wrapper">
         <div class="product-title">
-            <h2>Class Gear</h2>
+            <h2 class="vivify fadeIn duration-300">Class Gear</h2>
         </div>
      <div class="product-list">
         <div class="product-spacer"></div>
     {{#each this}}
   
-    <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item">
+    <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00">
         <img src="gear/gear{{id}}.png">
         <div class="product-text">
-            <h3>${{summary}}.00</h3>
+            <h3>${{summary}}</h3>
             <p>{{title}}</p>
         </div>
     </div>
@@ -183,13 +183,13 @@
   <script id="item-templateC" type="text/x-handlebars-template">
     <div class="product-wrapper">
         <div class="product-title">
-            <h2>Mens Rings</h2>
+            <h2 class="vivify fadeIn duration-300">Mens Rings</h2>
         </div>
      <div class="product-list">
         <div class="product-spacer"></div>
     {{#each this}}
   
-    <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item">
+    <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00">
      
         <img src="rings/{{title}}.png">
         <div class="product-text">
@@ -207,7 +207,8 @@
   if(e.data == "addCart"){
    document.getElementById('dyn-sheet').style.display='none'
    document.getElementById('cartItem').innerHTML = document.getElementById('sheetTitle').innerHTML;
-  
+   document.getElementById('cartFrame').src="https://spa.ms/cart"
+
    setTimeout(function(){  
     document.getElementById('cartConfirm').style.bottom = "96px"
 }, 500);
@@ -215,6 +216,11 @@ setTimeout(function(){
     document.getElementById('cartConfirm').style.bottom = "-70px"
 }, 4500);
   
+   
+  }
+
+  if(e.data == "addCart"){
+
    
   }
 });

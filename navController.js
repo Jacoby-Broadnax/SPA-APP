@@ -1,13 +1,11 @@
-function contestNav(){
+function cartNav(){
     document.getElementById('cIcon').style.opacity = "1.0";
     document.getElementById('lIcon').style.opacity = "0.5";
     document.getElementById('eIcon').style.opacity = "0.5";
     document.getElementById('coIcon').style.opacity = "0.5";
-    document.getElementById('contactOutput').style.display = "none";
-    document.getElementById('newsOutput').style.display = "none";
-    document.getElementById('contestsOutput').style.display = "block";
-    document.getElementById('newdayOutput').style.display = "none";
-    document.getElementById('eventsOutput').style.display = "none";
+    document.getElementById('cartpage').style.display = "block";
+    document.getElementById('homepage').style.display = "none";
+  
 }
 
 function listenNav(){
@@ -15,11 +13,8 @@ function listenNav(){
     document.getElementById('lIcon').style.opacity = "1.0";
     document.getElementById('eIcon').style.opacity = "0.5";
     document.getElementById('coIcon').style.opacity = "0.5";
-
-    document.getElementById('contactOutput').style.display = "none";
-    document.getElementById('newsOutput').style.display = "block";
-    document.getElementById('contestsOutput').style.display = "none";
-    document.getElementById('eventsOutput').style.display = "none";
+    document.getElementById('cartpage').style.display = "none";
+    document.getElementById('homepage').style.display = "block";
 }
 
 function eventsNav(){
