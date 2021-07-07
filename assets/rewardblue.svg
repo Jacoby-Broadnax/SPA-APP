@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="32.42" viewBox="0 0 31 32.42">
+  <g id="rewardblue" transform="translate(0 1)">
+    <path id="Path_11" data-name="Path 11" d="M0,0H31V31.42H0Z" fill="none"/>
+    <g id="Mask_Group_8" data-name="Mask Group 8" transform="translate(1.53 -1)">
+      <g id="emoji_events-24px">
+        <rect id="Rectangle_11" data-name="Rectangle 11" width="27" height="27.42" transform="translate(0.5)" fill="none"/>
+        <g id="Mask_Group_15" data-name="Mask Group 15" transform="translate(0 2.5)">
+          <g id="emoji_events-24px_1_" data-name="emoji_events-24px (1)">
+            <rect id="Rectangle_12" data-name="Rectangle 12" width="27.94" height="28.36" fill="none"/>
+            <path id="Path_18" data-name="Path 18" d="M23.377,4.609H20.689V1.875H7.25V4.609H4.563A2.719,2.719,0,0,0,1.875,7.344V8.711a6.784,6.784,0,0,0,5.9,6.754,6.76,6.76,0,0,0,4.851,4.047V23.75H7.25v2.734H20.689V23.75H15.314V19.512a6.76,6.76,0,0,0,4.851-4.047,6.784,6.784,0,0,0,5.9-6.754V7.344A2.719,2.719,0,0,0,23.377,4.609ZM4.563,8.711V7.344H7.25v5.223A4.112,4.112,0,0,1,4.563,8.711Zm9.407,8.2a4.079,4.079,0,0,1-4.032-4.1v-8.2H18v8.2A4.079,4.079,0,0,1,13.97,16.914Zm9.407-8.2a4.112,4.112,0,0,1-2.688,3.856V7.344h2.688Z" transform="translate(0 0)" fill="#003aff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

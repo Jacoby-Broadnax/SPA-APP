@@ -106,6 +106,24 @@
   border: none;
   background-color: white;}
 
+/*--------------Setup Page-------------------*/
+
+.initial {position: fixed; top: 0px; left: 0px; width: 100%;height: 100vh;z-index: 400; background-color: white;}
+
+.initial-text > h2 {    width: 100%;
+  text-align: center;
+  font-size: 7vw;}
+
+.initial-text > p {width: 100%;
+  text-align: center;
+  font-size: 3.5vw;
+  margin-top: -2px;
+}
+
+.initial-text {
+  margin-top: 55px;
+}
+
 /*--------------Cart Styling-----------------*/
 
 .cart-frame {position: fixed;
