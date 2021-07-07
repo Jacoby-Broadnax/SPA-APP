@@ -124,6 +124,19 @@
   margin-top: 55px;
 }
 
+.initial-feed {margin: auto;width: 88%;margin-top: 40px;}
+
+.feed-item {display: inline-block;}
+
+.feed-item > img {width: 32px;margin-top: 40px;float: left;}
+
+.feed-text {display: inline-block;width: 81%;margin-top: 22px;margin-left: 22px;}
+
+.feed-text > h3 {font-size: 15px;}
+
+.feed-text > p {font-size: 13px;color: #656565;}
+
+
 /*--------------Cart Styling-----------------*/
 
 .cart-frame {position: fixed;
