@@ -169,6 +169,8 @@
   padding-left: 12px;
 }
 
+.form {margin-top: 30px;}
+
 .halfed > label {font-weight: 600; font-size: 14px; ;}
 
 .halfed {display: inline-block;
