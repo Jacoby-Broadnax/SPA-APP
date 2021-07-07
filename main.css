@@ -124,11 +124,11 @@
   margin-top: 55px;
 }
 
-.initial-feed {margin: auto;width: 88%;margin-top: 40px;}
+.initial-feed {margin: auto;width: 90%;margin-top: 40px;}
 
 .feed-item {display: inline-block;}
 
-.feed-item > img {width: 32px;margin-top: 40px;float: left;}
+.feed-item > img {width: 32px;margin-top: 40px;float: left;margin-left: 10px;}
 
 .feed-text {display: inline-block;width: 81%;margin-top: 22px;margin-left: 22px;}
 
