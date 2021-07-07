@@ -185,6 +185,12 @@
 
 .flattened {width: 95%;}
 
+.button-wrapper > button {width: 48%;}
+
+.button-wrapper > button:first-of-type {margin-right: 6px;}
+
+.button-wrapper > button:last-of-type {background-color: transparent; border: none; color: black;}
+
 
 .form {margin: auto;width: 90%;margin-top: 30px;}
 
