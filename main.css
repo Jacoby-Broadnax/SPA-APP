@@ -108,7 +108,7 @@
 
 /*--------------Setup Page-------------------*/
 
-.initial {position: fixed; top: 0px; left: 0px; width: 100%;height: 100vh;z-index: 400; background-color: white;display: none;}
+.initial {position: fixed; top: 0px; left: 0px; width: 100%;height: 100vh;z-index: 400; background-color: white;}
 
 .initial-text > h2 {    width: 100%;
   text-align: center;
@@ -156,7 +156,7 @@
 
 .signup {position: fixed; top: 0px; left: 0px; width: 100%;height: 100vh;z-index: 400; background-color: white;display: none;}
 
-.shipping {position: fixed; top: 0px; left: 0px; width: 100%;height: 100vh;z-index: 400; background-color: white;}
+.shipping {position: fixed; top: 0px; left: 0px; width: 100%;height: 100vh;z-index: 400; background-color: white;display: none;}
 
 .signup-wrapper {margin: auto;width: 90%;}
 

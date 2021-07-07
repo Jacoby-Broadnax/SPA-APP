@@ -16,6 +16,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
     <script src="/navController.js"></script>
     <script src="/actionSheet.js"></script>
+    <script src="/accountHandler.js"></script>
     <link rel="stylesheet" href="/vivify.min.css">
     <meta name="theme-color" content="#171717">
 </head>
@@ -28,7 +29,7 @@
 
 <!----------------------Initial Screen-------------------->
 
-<div class="initial">
+<div id="initial" class="initial">
     <div class="initial-wrapper">
         <div class="initial-text">
             <h2>Welcome To The SPA App</h2>
@@ -47,8 +48,8 @@
             <div class="feed-item">
                 <img src="/assets/rewardblue.svg">
                 <div class="feed-text">
-                    <h3>Reward</h3>
-                    <p>With every purchase get rewards points. Redeem those points for free products</p>
+                    <h3>Rewards</h3>
+                    <p>With every purchase get reward points. Redeem those points for free products</p>
                 </div>   
                </div>
 
@@ -63,7 +64,7 @@
 
         <div class="wrap-fixed">
         <div class="large-wrap">
-            <button class="large-confirm">Get Started</button>
+            <button onclick="document.getElementById('signup').style.display='block';document.getElementById('initial').style.display='block';" class="large-confirm">Get Started</button>
         </div>
     </div>
     </div>
@@ -72,7 +73,7 @@
 
 <!----------------------Sign up Form-------------------->
 
-<div class="signup">
+<div id="signup" class="signup vivify fadeInRight duration-300">
     <div class="signup-wrapper">
         <h1>Sign Up</h1>
     </div>
@@ -82,13 +83,13 @@
             <div class="halfed first-half">
                 <label>First Name</label>
                 <br>
-                <input class="text-input " id="fname" type="text">
+                <input oninput="accountStore('fname', document.getElementById('fname').value)" class="text-input " id="fname" type="text">
             </div>
             
             <div class="halfed">
                 <label>Last Name</label>
                 <br>
-                <input class="text-input " id="fname" type="text">
+                <input oninput="accountStore('lname', document.getElementById('lname').value)" class="text-input " id="lname" type="text">
             </div>   
         </div>
 
@@ -96,7 +97,7 @@
 
         <label>Email</label>
         <br>
-        <input class="text-input flattened" type="email" id="email">
+        <input oninput="accountStore('email', document.getElementById('email').value)" class="text-input flattened" type="email" id="email">
 
         
 
@@ -104,19 +105,14 @@
             <div class=" halfed first-half">
                 <label>Phone Number</label>
                 <br>
-                <input class="text-input " id="fname" type="tel">
+                <input oninput="accountStore('number', document.getElementById('number').value)" class="text-input " id="number" type="tel">
             </div>
          
             <div class=" halfed">
                 <label>School</label>
                 <br>
-                <select id="school" class="text-input select-input">
-                    <option value="" selected disabled hidden>Select School</option>
-                    <option value="placeholder">School 1</option>
-                    <option value="placeholder">School 2</option>
-                    <option value="placeholder">School 3</option>
-
-                </select>
+               <div id="schools">
+                   </div>
             </div>   
         </div>
 
@@ -352,6 +348,30 @@
       {{/each}}
       </div>
       </div>   
+  </script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/scholastic/schools', function (data) {
+        var template = Handlebars.compile($('#item-templateE').html())
+        $('#schools').html(template(data.schools))
+      })
+    })
+  </script>
+
+  <script id="item-templateE" type="text/x-handlebars-template">
+
+    <select onchange="accountStore('school', document.getElementById('school').value)" id="school" class="text-input select-input">
+        <option value="" selected disabled hidden>Select School</option>
+
+    {{#each this}}
+  
+   <option value="{{school}}">{{school}}</option>
+     
+      {{/each}}
+    </select>  
   </script>
   <script>
   window.addEventListener('message', function(e) {
