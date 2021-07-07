@@ -162,18 +162,29 @@
 
 .text-input {border: solid 1px lightgray;
   width:100%;
-  height: 35px;
+  height: 40px;
   font-size: 16px;
   border-radius: 5px;
+  margin-top: 7px;
+  padding-left: 12px;
 }
+
+.halfed > label {font-weight: 600; font-size: 14px; ;}
 
 .halfed {display: inline-block;
-  width: 48%;
+  width: 44%;}
+
+.first-half {margin-right: 22px;
 }
 
-.first-half {margin-right: 10px;}
+.flattened {width: 95%;}
+
 
 .form {margin: auto;width: 90%;}
+
+.halfed-input {margin-bottom: 15px;}
+
+.flattened {margin-bottom: 15px;}
 
 /*--------------Cart Styling-----------------*/
 
