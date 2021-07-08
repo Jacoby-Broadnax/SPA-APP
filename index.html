@@ -289,7 +289,7 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
     <img src="/gradproducts/grad11.webp">
     <h4>2021 Sherpa Style Pullover</h4>
 </div>
-<iframe onload="document.getElementById('item-loader').style.display='none';" id="sheetFrame" class="sheet-frame vivify fadeIn duration-300 delay-1250" src="https://spa.ms/test2/?utm_source=rss&utm_medium=rss&utm_campaign=test2"></iframe>
+<iframe onload="" id="sheetFrame" class="sheet-frame vivify fadeIn duration-300 delay-500" src=""></iframe>
 </div>
 
 <div class="bottom-navigation">
@@ -496,11 +496,18 @@ cartCheck()
    
   }
 
+  if(e.data == "loaded"){
+   document.getElementById('item-loader').style.display='none';
+   document.getElementById('dyn-sheet').style.display = 'block';
+  }
+
   if(e.data == "emptyCart"){
     localStorage.setItem('cartState', 'false');
     cartCheck()
   }
 });
+
+
 
 function cartCheck(){
     if(localStorage.getItem('cartState') == null){
@@ -538,7 +545,7 @@ cartCheck()
 
   </script>
 
-  <div id="profileOverlay" class="profile-overlay vivify fadeInRight duration-300">
+  <div id="profileOverlay" class="profile-overlay vivify fadeInBottom duration-300">
     <button onclick="document.getElementById('profileOverlay').style.display='none'" class="user-close">Done</button>
       <div class="user-icon">
           <img id="overlay-icon" src="/assets/logo.png">

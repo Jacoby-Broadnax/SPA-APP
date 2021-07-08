@@ -3,7 +3,7 @@ document.getElementById('sheetTitle').innerHTML = name;
 document.getElementById('sheetFrame').src= "";
 document.getElementById('sheetFrame').src= url;
 document.getElementById('item-loader').style.display = 'block';
-document.getElementById('dyn-sheet').style.display = 'block';
+
 }
 
 function dynClose(){
