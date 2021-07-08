@@ -14,9 +14,10 @@
     <link rel= 'stylesheet' href="/main.css">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+   
     <script src="/navController.js"></script>
     <script src="/actionSheet.js"></script>
-    <script src="/accountHandler.js"></script>
+ 
     <link rel="stylesheet" href="/vivify.min.css">
     <meta name="theme-color" content="#171717">
 </head>
@@ -164,7 +165,7 @@
 <div class="button-wrapper">
     <button type="submit" class="large-confirm form-submit">Save Address</button>
 
-    <button type="submit" class="large-confirm form-submit">Skip</button>
+    <button onclick="document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none'" class="large-confirm form-submit">Skip</button>
 </div>
        
     </form>
@@ -252,7 +253,7 @@
      </button>
     </div>
  </div>
- 
+ <script src="/accountHandler.js"></script>
  <script type="text/javascript">
     $(document).ready(function () {
       $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/spa/gradproducts', function (data) {

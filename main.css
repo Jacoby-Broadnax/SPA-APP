@@ -108,7 +108,7 @@
 
 /*--------------Setup Page-------------------*/
 
-.initial {position: fixed; top: 0px; left: 0px; width: 100%;height: 100vh;z-index: 400; background-color: white;}
+.initial {position: fixed; top: 0px; left: 0px; width: 100%;height: 100vh;z-index: 400; background-color: white;display: none;}
 
 .initial-text > h2 {    width: 100%;
   text-align: center;
