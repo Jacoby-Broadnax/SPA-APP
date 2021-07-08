@@ -7,6 +7,7 @@ if ("userState" in localStorage){
     document.getElementById('fy1img').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';
     document.getElementById('fy1icon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';
     document.getElementById('fy1title').innerHTML= localStorage.getItem('dataschool');
+    document.getElementById('fy2img').src= 'announcements/' + localStorage.getItem('dataschool') + '.jpg'
 }else{
     document.getElementById('initial').style.display='block';
 }

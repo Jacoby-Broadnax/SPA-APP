@@ -226,8 +226,19 @@ waApp.register()
      <div class="product-list">
         <div class="product-spacer"></div>
 
-  
-    <div onclick="dynSheet('Senior Grad Products', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00" style="border: none;">
+  <script>
+      function mascotPKG(){
+    fetch('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/scholastic/schools?filter[school]=' + localStorage.getItem('dataschool'), { 
+  method: 'GET'
+})
+.then(function(response) { return response.json(); })
+.then(function(schools) {
+  console.log(schools.schools[0].prop)
+dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#WidgetStore' + schools.schools[0].prop )
+});  
+}
+      </script>
+    <div onclick="mascotPKG();" class="product-item vivify fadeIn delay-{{id}}00" style="border: none;">
         <img id="fy1img" src="gradproducts/grad{{id}}.webp">
         <div class="icon-img">
             <img id="fy1icon" src="/assets/logo.png">
@@ -235,6 +246,16 @@ waApp.register()
         <div class="product-text">
             <h3 id="fy1sum">Mascot Package</h3>
             <p id="fy1title">{{title}}</p>
+        </div>
+    </div>
+
+
+    <div onclick="dynSheet('Class Announcements', 'https://spa.ms/official-graduate-announcements/')" class="product-item vivify fadeIn delay-{{id}}00" >
+        <img id="fy2img" src="gradproducts/grad{{id}}.webp">
+ 
+        <div class="product-text">
+            <h3 id="fy2sum">Class Announcements</h3>
+            <p id="fy2title">{{title}}</p>
         </div>
     </div>
      
@@ -453,7 +474,11 @@ if(localStorage.getItem('cartState') == 'true'){
 }
 }
 
-cartCheck()
+cartCheck();
+
+
+
+
 
   </script>
 </body>
