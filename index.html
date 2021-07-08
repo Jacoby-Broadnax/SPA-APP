@@ -134,7 +134,7 @@ waApp.register()
         </div>
 
         <button id="setupBTN" type="submit" class="large-confirm form-submit">Submit</button>
-        <button id="setupSaveBTN" onmouseout="document.getElementById('signup').style.display='none';userState();document.getElementById('shipping').style.display='none';" class="large-confirm form-submit">Save</button>
+        <button type="reset" id="setupSaveBTN" onclick="document.getElementById('signup').style.display='none';userState();document.getElementById('shipping').style.display='none';" class="large-confirm form-submit">Save</button>
     </form>
 </div>
 
@@ -501,7 +501,7 @@ cartCheck()
   <div id="profileOverlay" class="profile-overlay vivify fadeInRight duration-300">
     <button onclick="document.getElementById('profileOverlay').style.display='none'" class="user-close">Done</button>
       <div class="user-icon">
-          <img onload="document.getElementById('shipping').style.display='none';" id="overlay-icon" src="/assets/logo.png">
+          <img id="overlay-icon" src="/assets/logo.png">
       </div>
       <div class="profile-text">
           <h3><span id="PfirstName"></span> <span id="PlastName"></span> </h3>
