@@ -299,7 +299,12 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
 <script>
     function poster(){
         if(anounce == true){
+            try {
+                document.getElementById('sheetFrame').contentWindow.postMessage('schoolItem' + localStorage.getItem('dataschool') , '*')
+} catch(e) {
     document.getElementById('sheetFrame').contentWindow.postMessage('schoolItem' + localStorage.getItem('dataschool') , '*')
+}
+    
     console.log('message posted')
 }
     }
