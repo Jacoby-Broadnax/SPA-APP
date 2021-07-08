@@ -98,13 +98,13 @@ waApp.register()
 
         <div class="halfed-input">
             <div class="halfed first-half">
-                <label>First Name*</label>
+                <label>First Name</label>
                 <br>
                 <input required oninput="accountStore('fname', document.getElementById('fname').value)" class="text-input " id="fname" type="text">
             </div>
             
             <div class="halfed">
-                <label>Last Name*</label>
+                <label>Last Name</label>
                 <br>
                 <input required oninput="accountStore('lname', document.getElementById('lname').value)" class="text-input " id="lname" type="text">
             </div>   
@@ -112,7 +112,7 @@ waApp.register()
 
         
 
-        <label>Email*</label>
+        <label>Email</label>
         <br>
         <input required oninput="accountStore('email', document.getElementById('email').value)" class="text-input flattened" type="email" id="email">
 
@@ -120,13 +120,13 @@ waApp.register()
 
         <div class="halfed-input">
             <div class=" halfed first-half">
-                <label>Phone Number*</label>
+                <label>Phone Number</label>
                 <br>
                 <input required oninput="accountStore('number', document.getElementById('number').value)" class="text-input " id="number" type="tel">
             </div>
          
             <div class=" halfed">
-                <label>School*</label>
+                <label>School</label>
                 <br>
                <div id="schools">
                    </div>
@@ -134,7 +134,7 @@ waApp.register()
         </div>
 
         <button id="setupBTN" type="submit" class="large-confirm form-submit">Submit</button>
-        <button id="setupSaveBTN" onclick="document.getElementById('signup').style.display='none';userState()" class="large-confirm form-submit">Save</button>
+        <button id="setupSaveBTN" onclick="document.getElementById('signup').style.display='none';userState();document.getElementById('shipping').style.display='none';" class="large-confirm form-submit">Save</button>
     </form>
 </div>
 
@@ -251,11 +251,11 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
     </div>
 
 
-    <div onclick="dynSheet('Class Announcements', 'https://spa.ms/official-graduate-announcements/')" class="product-item vivify fadeIn delay-{{id}}00" >
+    <div onclick="dynSheet('Announcements', 'https://spa.ms/official-graduate-announcements/')" class="product-item vivify fadeIn delay-{{id}}00" >
         <img id="fy2img" src="gradproducts/grad{{id}}.webp">
  
         <div class="product-text">
-            <h3 id="fy2sum">Class Announcements</h3>
+            <h3 id="fy2sum">Announcements</h3>
             <p id="fy2title">{{title}}</p>
         </div>
     </div>
@@ -509,7 +509,7 @@ cartCheck()
       </div>
 
       <div class="user-options">
-          <button onclick="document.getElementById('signup').style.display='block';document.getElementById('fname').value = localStorage.getItem('datafname');document.getElementById('setupSaveBTN').style.display='block';document.getElementById('setupBTN').style.display='none';document.getElementById('signup-text').innerHTML ='Edit Profile';" class="user-button"><h3>Profile</h3>
+          <button onclick="document.getElementById('signup').style.display='block';document.getElementById('fname').value = localStorage.getItem('datafname');document.getElementById('setupSaveBTN').style.display='block';document.getElementById('setupBTN').style.display='none';document.getElementById('signup-text').innerHTML ='Edit Profile';document.getElementById('lname').value = localStorage.getItem('datalname');" class="user-button"><h3>Profile</h3>
         <p>School, Email, Phone Number & More.</p></button>
 
         <button class="user-button"><h3>Shipping</h3>

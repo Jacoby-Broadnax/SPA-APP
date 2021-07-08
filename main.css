@@ -234,17 +234,18 @@ border-radius: 6px;
 
 .user-options {margin: auto; width: 92%;margin-top:35px;}
 
-.user-button {width: 100%; margin-bottom: 15px;background-color: white;border: solid 1px lightgray;border-radius: 10px;}
+.user-button {width: 100%; margin-bottom: 15px;background-color: white;border: solid 1px lightgray;border-radius: 10px;color: black;}
 
 .user-button > h3 {    width: 100%;
   text-align: left;
   margin-left: 20px;
   margin-top: 16px;
+  font-size: 17px;
 }
 
 #setupSaveBTN {display: none;}
 
-.user-button > p {width: 100%; text-align: left;margin-left: 20px;padding-bottom: 16px;}
+.user-button > p {width: 100%; text-align: left;margin-left: 20px;padding-bottom: 16px;font-size: 14px;}
 
 .user-close {    float: right;
   color: #007AFF;
@@ -262,7 +263,7 @@ border-radius: 6px;
 }
 
 
-.profile-overlay {position: fixed; top: 0px; left: 0px; width: 100%;height: 100vh;background-color: white; z-index: 150;}
+.profile-overlay {position: fixed; top: 0px; left: 0px; width: 100%;height: 100vh;background-color: white; z-index: 150;display: none;}
 
 .user-icon > img  {width: 90px;height: 90px; object-fit: cover;border-radius: 150px;    border: solid 1px lightgray;
 }
