@@ -31,6 +31,24 @@
 
 .profile-icon {width: 45px;height: 45px; object-fit: cover;border: solid 1px lightgray;border-radius: 50px;position: absolute;right: 20px;top: 45px;}
 
+.icon-img {position: absolute;
+  width: 159px;
+  height: 159px;
+ 
+  z-index: 50;
+  margin-top: -166px;
+  background-color: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: solid 1px lightgray;
+;display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 6px;
+}
+
+.icon-img img {width: 80px; height: 80px; object-fit: cover;position: absolute;border-radius: 50px;}
+
   #homepage {margin-bottom: 90px;}
 
   .page-title {
