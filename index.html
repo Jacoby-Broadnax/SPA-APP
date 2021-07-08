@@ -92,9 +92,9 @@ waApp.register()
 
 <div id="signup" class="signup vivify fadeInRight duration-300">
     <div class="signup-wrapper">
-        <h1>Sign Up</h1>
+        <h1 id="signup-text">Sign Up</h1>
     </div>
-    <form class="form" onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='block';    document.getElementById('pIcon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1img').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1icon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1title').innerHTML= localStorage.getItem('dataschool');;return false;">
+    <form class="form" onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='block';userState();return false;">
 
         <div class="halfed-input">
             <div class="halfed first-half">
@@ -133,7 +133,8 @@ waApp.register()
             </div>   
         </div>
 
-        <button type="submit" class="large-confirm form-submit">Submit</button>
+        <button id="setupBTN" type="submit" class="large-confirm form-submit">Submit</button>
+        <button id="setupSaveBTN" onclick="document.getElementById('signup').style.display='none';userState()" class="large-confirm form-submit">Save</button>
     </form>
 </div>
 
@@ -145,7 +146,7 @@ waApp.register()
     <div class="signup-wrapper">
         <h1>Shipping</h1>
     </div>
-    <form onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block';localStorage.setItem('userState', 'true');document.getElementById('pIcon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1img').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1icon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1title').innerHTML= localStorage.getItem('dataschool');;return false;" class="form">
+    <form onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block';localStorage.setItem('userState', 'true');userState();return false;" class="form">
 
         
         <label>Street Address</label>
@@ -191,7 +192,7 @@ waApp.register()
     <div class="confirm-wrapper">
         <img src="/assets/shopping_cart_black_24dp.svg">
         <div class="confirm-text">
-            <h4>Added To Cart</h4>
+            <h4 id="cartHero">Added To Cart</h4>
             <p id="cartItem">Placeholder Text</p>
         </div>
     </div>
@@ -210,7 +211,7 @@ waApp.register()
        <h1 onclick="authenticationInit()" class="page-title">Home</h1>
 
    
-           <img id="pIcon" class="profile-icon" src="/assets/logo.png">
+           <img onclick="document.getElementById('profileOverlay').style.display='block'" id="pIcon" class="profile-icon" src="/assets/logo.png">
            
     <div class="search-wrapper">
         <div class="search-field">
@@ -315,7 +316,7 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
      </button>
     </div>
  </div>
- <script src="/accountHandler.js"></script>
+
  <script type="text/javascript">
     $(document).ready(function () {
       $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/spa/gradproducts', function (data) {
@@ -441,6 +442,7 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
   if(e.data == "addCart"){
    document.getElementById('dyn-sheet').style.display='none'
    document.getElementById('cartItem').innerHTML = document.getElementById('sheetTitle').innerHTML;
+   document.getElementById('cartHero').innerHTML = "Added To Cart";
    document.getElementById('cartFrame').src="https://spa.ms/cart";
    localStorage.setItem('cartState', 'true');
 
@@ -478,8 +480,43 @@ cartCheck();
 
 
 
+function notification(){
+    document.getElementById('dyn-sheet').style.display='none'
+   document.getElementById('cartItem').innerHTML = document.getElementById('sheetTitle').innerHTML;
+   document.getElementById('cartFrame').src="https://spa.ms/cart";
+   document.getElementById('cartHero').innerHTML = "Added To Cart";
+   localStorage.setItem('cartState', 'true');
 
+   setTimeout(function(){  
+    document.getElementById('cartConfirm').style.bottom = "96px"
+}, 500);
+setTimeout(function(){  
+    document.getElementById('cartConfirm').style.bottom = "-70px"
+}, 4500);
+cartCheck()
+}
 
   </script>
+
+  <div id="profileOverlay" class="profile-overlay vivify fadeInRight duration-300">
+    <button onclick="document.getElementById('profileOverlay').style.display='none'" class="user-close">Done</button>
+      <div class="user-icon">
+          <img id="overlay-icon" src="/assets/logo.png">
+      </div>
+      <div class="profile-text">
+          <h3><span id="PfirstName"></span> <span id="PlastName"></span> </h3>
+          <p id="Pmail"></p>
+      </div>
+
+      <div class="user-options">
+          <button onclick="document.getElementById('signup').style.display='block';document.getElementById('fname').value = localStorage.getItem('datafname');document.getElementById('setupSaveBTN').style.display='block';document.getElementById('setupBTN').style.display='none';document.getElementById('signup-text').innerHTML ='Edit Profile';" class="user-button"><h3>Profile</h3>
+        <p>School, Email, Phone Number & More.</p></button>
+
+        <button class="user-button"><h3>Shipping</h3>
+            <p>School, Email, Phone Number & More.</p></button>
+      </div>
+  </div>
+
+  <script src="/accountHandler.js"></script>
 </body>
 </html>
