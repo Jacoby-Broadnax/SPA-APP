@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="theme-color" content="#ffffff">
-    
+    <script src="https://cdn.jsdelivr.net/npm/webauthn-simple-app/dist/webauthn-simple-app.umd.js"></script>
     <title>SPA App</title>
     <link rel= 'stylesheet' href="/main.css">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -27,6 +27,22 @@
     <img  src="https://i.gifer.com/ZZ5H.gif">
     <p>Loading Product...</p>
 </div>
+
+<script>
+    function authenticationInit(){
+        var waApp = new WebAuthnApp()
+waApp.username = "me";
+waApp.register()
+    .then(() => {
+        alert("You are now registered!");
+    })
+    .catch((err) => {
+        alert("Registration error: " + err.message);
+    });
+    }
+    // register a new device / account
+
+    </script>
 
 <!----------------------Initial Screen-------------------->
 
@@ -191,7 +207,11 @@
 
 
    <section id="homepage">
-       <h1  class="page-title">Home</h1>
+       <h1 onclick="authenticationInit()" class="page-title">Home</h1>
+
+   
+           <img id="pIcon" class="profile-icon" src="/assets/logo.png">
+           
     <div class="search-wrapper">
         <div class="search-field">
             <img src="/assets/search-24px (1).svg">

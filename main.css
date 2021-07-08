@@ -8,6 +8,10 @@
 
 .item-loader {position: fixed;top: 0px; left: 0px; width: 100%; height: 100vh; background-color: white;z-index: 100;display: none;}
 
+.profile-icon {width: 50px;}
+
+.profile-icon > img {width: 100%; height: 100%;}
+
 .item-loader > img {position: fixed;
   left: 50%;
   top: 50%;
@@ -25,6 +29,8 @@
   margin-top: 30px;
 }
 
+.profile-icon {width: 45px;height: 45px; object-fit: cover;border: solid 1px lightgray;border-radius: 50px;position: absolute;right: 20px;top: 45px;}
+
   #homepage {margin-bottom: 90px;}
 
   .page-title {
@@ -33,7 +39,7 @@
     margin-left: 13px;
     margin-top: 41px;
     font-weight: bold;
-    border-bottom: solid 1px lightgray;
+    
     width: 93%;
 }
 
