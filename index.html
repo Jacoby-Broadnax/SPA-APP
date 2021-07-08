@@ -129,7 +129,7 @@
     <div class="signup-wrapper">
         <h1>Shipping</h1>
     </div>
-    <form onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block';return false;" class="form">
+    <form onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block';localStorage.setItem('userState', 'true');return false;" class="form">
 
         
         <label>Street Address</label>
@@ -165,7 +165,7 @@
 <div class="button-wrapper">
     <button type="submit" class="large-confirm form-submit">Save Address</button>
 
-    <button onclick="document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block';" class="large-confirm form-submit">Skip</button>
+    <button onclick="document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block'; localStorage.setItem('userState', 'true')" class="large-confirm form-submit">Skip</button>
 </div>
        
     </form>
