@@ -210,8 +210,12 @@ waApp.register()
 
 
    <section id="homepage">
-       <h1 onclick="authenticationInit()" class="page-title">Home</h1>
+       <h1 ondblclick="document.getElementById('dev-menu').style.display='block'" class="page-title">Home</h1>
 
+       <div id="dev-menu" class="dev-menu">
+           <h2>Dev Menu</h2>
+           <button onclick="localStorage.clear(); window.location.reload()">Reset Local Storage</button>
+       </div>
    
            <img onclick="document.getElementById('profileOverlay').style.display='block'" id="pIcon" class="profile-icon" src="/assets/logo.png">
            
