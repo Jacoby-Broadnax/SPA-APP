@@ -133,8 +133,10 @@ waApp.register()
             </div>   
         </div>
 
+    <button type="reset" id="setupSaveBTN" onclick="document.getElementById('signup').style.display='none';userState();document.getElementById('shipping').style.display='none';" class="large-confirm form-submit">Done</button>
+
         <button id="setupBTN" type="submit" class="large-confirm form-submit">Submit</button>
-        <button type="reset" id="setupSaveBTN" onclick="document.getElementById('signup').style.display='none';userState();document.getElementById('shipping').style.display='none';" class="large-confirm form-submit">Save</button>
+      
     </form>
 </div>
 
@@ -177,9 +179,9 @@ waApp.register()
         <br>
         <input oninput="accountStore('zip', document.getElementById('zip').value)"  required class="text-input flattened" type="text" id="zip">
 
-
+        <button type="reset" id="shippingSaveBTN" onclick="document.getElementById('signup').style.display='none';userState();document.getElementById('shipping').style.display='none';" class="large-confirm form-submit">Done</button>
   
-<div class="button-wrapper">
+<div id="shippingBTN" class="button-wrapper">
     <button type="submit" class="large-confirm form-submit">Save Address</button>
 
     <button onclick="document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block'; localStorage.setItem('userState', 'true');document.getElementById('pIcon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1img').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1icon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1title').innerHTML= localStorage.getItem('dataschool');" class="large-confirm form-submit">Skip</button>
@@ -509,10 +511,10 @@ cartCheck()
       </div>
 
       <div class="user-options">
-          <button onclick="document.getElementById('signup').style.display='block';document.getElementById('fname').value = localStorage.getItem('datafname');document.getElementById('setupSaveBTN').style.display='block';document.getElementById('setupBTN').style.display='none';document.getElementById('signup-text').innerHTML ='Edit Profile';document.getElementById('lname').value = localStorage.getItem('datalname');document.getElementById('email').value = localStorage.getItem('dataemail');document.getElementById('number').value = localStorage.getItem('datanumber');" class="user-button"><h3>Profile</h3>
+          <button onclick="document.getElementById('signup').style.display='block';document.getElementById('fname').value = localStorage.getItem('datafname');document.getElementById('setupSaveBTN').style.display='block';document.getElementById('setupBTN').style.display='none';document.getElementById('signup-text').innerHTML ='Edit Profile';document.getElementById('lname').value = localStorage.getItem('datalname');document.getElementById('email').value = localStorage.getItem('dataemail');document.getElementById('number').value = localStorage.getItem('datanumber');document.getElementById('school').value = localStorage.getItem('dataschool')" class="user-button"><h3>Profile</h3>
         <p>School, Email, Phone Number & More.</p></button>
 
-        <button class="user-button"><h3>Shipping</h3>
+        <button onclick="document.getElementById('shipping').style.display='block';document.getElementById('shippingBTN').style.display ='none';document.getElementById('shippingSaveBTN').style.display ='block';document.getElementById('saddress').value = localStorage.getItem('dataaddress');document.getElementById('apt').value = localStorage.getItem('dataapt');document.getElementById('city').value = localStorage.getItem('datacity');document.getElementById('state').value = localStorage.getItem('datastate');document.getElementById('zip').value = localStorage.getItem('datazip');" class="user-button"><h3>Shipping</h3>
             <p>School, Email, Phone Number & More.</p></button>
       </div>
   </div>
