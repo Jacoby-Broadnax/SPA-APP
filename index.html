@@ -267,6 +267,7 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
       </div>   
 <div class="item-wrapper" id="gradproducts"></div>
 <div class="item-wrapper" id="gear"></div>
+<div class="item-wrapper" id="wrings"></div>
 <div class="item-wrapper" id="rings"></div>
 
 </section>
@@ -415,6 +416,39 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
       </div>
       </div>   
   </script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/spa/ringswomens', function (data) {
+        var template = Handlebars.compile($('#item-templateL').html())
+        $('#wrings').html(template(data.ringswomens))
+      })
+    })
+  </script>
+
+  <script id="item-templateL" type="text/x-handlebars-template">
+    <div class="product-wrapper">
+        <div class="product-title">
+            <h2 class="vivify fadeIn duration-300">Womens Rings</h2>
+        </div>
+     <div class="product-list">
+        <div class="product-spacer"></div>
+    {{#each this}}
+  
+    <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00">
+     
+        <img src="rings/{{title}}.png">
+        <div class="product-text">
+            <h3>${{summary}}</h3>
+            <p>{{title}}</p>
+        </div>
+    </div>
+     
+      {{/each}}
+      </div>
+      </div>   
+  </script>
+
 
 
 
