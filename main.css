@@ -338,7 +338,7 @@ border-radius: 6px;
 .confirm-text > h4 {font-size: 15px;}
 
 .confirm-text > p {font-size: 13px;
-  width: 112%;
+  width: 165px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;}
