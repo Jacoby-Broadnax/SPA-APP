@@ -314,9 +314,18 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
     function checkout(){
       
             try {
-                document.getElementById('sheetFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname') , '*')
+                document.getElementById('sheetFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname') , '*');
+                document.getElementById('sheetFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname') , '*');
+                document.getElementById('sheetFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail') , '*');
+                document.getElementById('sheetFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber') , '*');
+                document.getElementById('sheetFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool') , '*');
+               
 } catch(e) {
-    document.getElementById('sheetFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname') , '*')
+    document.getElementById('sheetFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname') , '*');
+                document.getElementById('sheetFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname') , '*');
+                document.getElementById('sheetFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail') , '*');
+                document.getElementById('sheetFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber') , '*');
+                document.getElementById('sheetFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool') , '*');
 }
     
     console.log('message posted')
@@ -325,7 +334,7 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
 
     </script>
 
-<iframe onload="poster()" id="sheetFrame" class="sheet-frame vivify fadeIn duration-300 delay-500" src=""></iframe>
+<iframe onload="checkout();poster();" id="sheetFrame" class="sheet-frame vivify fadeIn duration-300 delay-500" src=""></iframe>
 </div>
 
 <div class="bottom-navigation">
@@ -533,7 +542,8 @@ cartCheck()
   }
 
   if(e.data == "checkout"){
-    dynSheet('Checkout', 'https://spa.ms/checkout/')
+    dynSheet('Checkout', 'https://spa.ms/checkout/');
+    
   }
 
   if(e.data == "loaded"){
