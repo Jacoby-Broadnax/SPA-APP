@@ -346,6 +346,41 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
 
     }
 
+
+
+
+    
+    function payment(){
+      
+      try {
+          document.getElementById('payFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('1818' + localStorage.getItem('dataaddress') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('0404' + localStorage.getItem('dataapt') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('1994' + localStorage.getItem('datacity') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('8880' + localStorage.getItem('datastate') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('3232' + localStorage.getItem('datazip') , '*');
+         
+} catch(e) {
+document.getElementById('sheetFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('1818' + localStorage.getItem('dataaddress') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('0404' + localStorage.getItem('dataapt') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('1994' + localStorage.getItem('datacity') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('8880' + localStorage.getItem('datastate') , '*');
+          document.getElementById('payFrame').contentWindow.postMessage('3232' + localStorage.getItem('datazip') , '*');
+}
+
+console.log('message posted')
+
+}
+
     </script>
 
 <iframe onload="checkout();poster();" id="sheetFrame" class="sheet-frame vivify fadeIn duration-300 delay-500" src=""></iframe>

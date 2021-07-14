@@ -47,5 +47,6 @@ function contactNav(){
     document.getElementById('homepage').style.display = "none";
     document.getElementById('paymentpage').style.display = "block";
 
+    payment()
 
 }
