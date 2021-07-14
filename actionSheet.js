@@ -9,6 +9,6 @@ document.getElementById('cartFrame').src='https://spa.ms/cart/';
 function dynClose(){
 document.getElementById('dyn-sheet').style.display = 'none';
 document.getElementById('sheetFrame').src= '';  
-
+cartCheck();
 
 }
