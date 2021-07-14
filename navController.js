@@ -9,7 +9,8 @@ function cartNav(){
     setTimeout(function(){  
         document.getElementById('cartConfirm').style.bottom = "-70px"
     }, 300);
-  
+    document.getElementById('paymentpage').style.display = "none";
+
 }
 
 function listenNav(){
@@ -19,6 +20,8 @@ function listenNav(){
     document.getElementById('coIcon').style.opacity = "0.5";
     document.getElementById('cartpage').style.display = "none";
     document.getElementById('homepage').style.display = "block";
+    document.getElementById('paymentpage').style.display = "none";
+
 }
 
 function eventsNav(){
@@ -31,6 +34,8 @@ function eventsNav(){
     document.getElementById('contestsOutput').style.display = "none";
     document.getElementById('newdayOutput').style.display = "none";
     document.getElementById('eventsOutput').style.display = "block";
+    document.getElementById('paymentpage').style.display = "none";
+
 }
 
 function contactNav(){
@@ -38,9 +43,9 @@ function contactNav(){
     document.getElementById('lIcon').style.opacity = "0.5";
     document.getElementById('eIcon').style.opacity = "0.5";
     document.getElementById('coIcon').style.opacity = "1.0";
-    document.getElementById('contactOutput').style.display = "block";
-    document.getElementById('newsOutput').style.display = "none";
-    document.getElementById('contestsOutput').style.display = "none";
-    document.getElementById('newdayOutput').style.display = "none";
-    document.getElementById('eventsOutput').style.display = "none";
+    document.getElementById('cartpage').style.display = "none";
+    document.getElementById('homepage').style.display = "none";
+    document.getElementById('paymentpage').style.display = "block";
+
+
 }

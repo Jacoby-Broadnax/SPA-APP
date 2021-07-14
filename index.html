@@ -201,6 +201,10 @@ waApp.register()
     
 </div>
 
+<section id="paymentpage">
+<iframe src="https://spa.ms/make-a-payment/" class="cart-frame" id="payFrame"></iframe>
+</section>
+
 <section id="cartpage">
     <div class="cart-empty " id="cartEmpty">
        <h3 class="vivify fadeIn">Your Carts Empty</h3> 
@@ -264,7 +268,7 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
 
 
 
-<div onclick="window.anounce = true;dynSheet('Announcements', 'https://spa.ms/official-graduate-announcements/'); " class="product-item vivify fadeIn delay-300" >
+<div onclick="window.anounce = true;dynSheet('Announcements', 'https://spa.ms/official-graduate-announcements/'); document.getElementById('item-loader').style.display = 'none';document.getElementById('dyn-sheet').style.display='block'" class="product-item vivify fadeIn delay-300" >
     <img style="object-fit: contain;" id="fy2img" src="gradproducts/grad{{id}}.webp">
 
     <div class="product-text">
@@ -374,7 +378,7 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
          <div class="bottom-icon">
              <img class="bicon" id="bicon4" src="assets/payment_black_24dp.svg">
          </div>
-         <p id="s4text">Payments</p>
+         <p id="s4text">Quick Pay</p>
      </button>
     </div>
  </div>

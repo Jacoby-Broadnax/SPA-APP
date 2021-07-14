@@ -320,6 +320,8 @@ border-radius: 6px;
 
 .cart-confirm {position: fixed; bottom: -70px; left: 0px; width: 100%;z-index: 150;transition: 0.3s ease}
 
+#paymentpage {display: none;}
+
 .confirm-wrapper {
   
   margin: auto;
