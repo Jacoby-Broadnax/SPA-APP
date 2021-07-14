@@ -553,7 +553,7 @@ cartCheck()
 
   if(e.data == "checkout"){
     dynSheet('Checkout', 'https://spa.ms/checkout/');
-    
+    localStorage.setItem('cartState', 'false');
   }
 
   if(e.data == "loaded"){
