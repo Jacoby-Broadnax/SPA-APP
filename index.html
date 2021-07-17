@@ -28,27 +28,20 @@
     <p>Loading Product...</p>
 </div>
 <script>
-    if (window.matchMedia('(display-mode: standalone)').matches) {
- alert('State 1')
-}else {
-    alert('State 2')
+// Detects if device is on iOS 
+const isIos = () => {
+  const userAgent = window.navigator.userAgent.toLowerCase();
+  return /iphone|ipad|ipod/.test( userAgent );
+}
+// Detects if device is in standalone mode
+const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+// Checks if should display install popup notification:
+if (isIos() && !isInStandaloneMode()) {
+alert('installable')
 }
 </script>
-<script>
-    function authenticationInit(){
-        var waApp = new WebAuthnApp()
-waApp.username = "me";
-waApp.register()
-    .then(() => {
-        alert("You are now registered!");
-    })
-    .catch((err) => {
-        alert("Registration error: " + err.message);
-    });
-    }
-    // register a new device / account
 
-    </script>
 
 
 <div style="display: none;" class="load-bundler">
