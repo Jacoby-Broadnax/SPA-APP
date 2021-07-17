@@ -27,7 +27,13 @@
     <img  src="https://i.gifer.com/ZZ5H.gif">
     <p>Loading Product...</p>
 </div>
-
+<script>
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+ alert('pwa not installed')
+}else {
+    alert('pwa installed')
+}
+</script>
 <script>
     function authenticationInit(){
         var waApp = new WebAuthnApp()
