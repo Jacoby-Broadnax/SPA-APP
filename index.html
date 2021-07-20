@@ -23,6 +23,10 @@
 </head>
 <body onload="document.getElementById('dyn-sheet').style.display = 'none';">
 
+<div id="pwa-banner" class="pwa-banner">
+    <img class="pwa-img" src="/assets/pwa.svg">
+</div>
+
 <div class="item-loader" id="item-loader">
     <img  src="https://i.gifer.com/ZZ5H.gif">
     <p>Loading Product...</p>
@@ -38,7 +42,7 @@ const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.n
 
 // Checks if should display install popup notification:
 if (isIos() && !isInStandaloneMode()) {
-alert('installable')
+document.getElementById('pwa-banner').style.display='block';
 }
 </script>
 
