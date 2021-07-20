@@ -277,7 +277,7 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
 
 
 
-<div onclick="window.anounce = true;dynSheet('Announcements', 'https://spa.ms/official-graduate-announcements/'); document.getElementById('item-loader').style.display = 'none';document.getElementById('dyn-sheet').style.display='block'" class="product-item vivify fadeIn delay-300" >
+<div onclick="var anounce = true;dynSheet('Announcements', 'https://spa.ms/official-graduate-announcements/'); document.getElementById('item-loader').style.display = 'none';document.getElementById('dyn-sheet').style.display='block'" class="product-item vivify fadeIn delay-300" >
     <img style="object-fit: contain;" id="fy2img" src="gradproducts/grad{{id}}.webp">
 
     <div class="product-text">
@@ -315,11 +315,9 @@ dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#Wi
     function poster(){
         if(anounce == true){
             try {
-                document.getElementById('sheetFrame').contentWindow.postMessage('schoolItem' + localStorage.getItem('dataschool') , '*')
-} catch(e) {
+                document.getElementById('sheetFrame').contentWindow.postMessage('schoolItem' + localStorage.getItem('dataschool') , '*')} catch(e) {
     document.getElementById('sheetFrame').contentWindow.postMessage('schoolItem' + localStorage.getItem('dataschool') , '*')
-}
-    
+}   
     console.log('message posted')
 }
     }
