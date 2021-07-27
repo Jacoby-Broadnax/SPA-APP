@@ -10,6 +10,7 @@ function cartNav(){
         document.getElementById('cartConfirm').style.bottom = "-70px"
     }, 300);
     document.getElementById('paymentpage').style.display = "none";
+    document.getElementById('rewardpage').style.display = "none"
 
 }
 
@@ -21,6 +22,7 @@ function listenNav(){
     document.getElementById('cartpage').style.display = "none";
     document.getElementById('homepage').style.display = "block";
     document.getElementById('paymentpage').style.display = "none";
+    document.getElementById('rewardpage').style.display = "none";
 
 }
 
@@ -45,6 +47,7 @@ function contactNav(){
     document.getElementById('cartpage').style.display = "none";
     document.getElementById('homepage').style.display = "none";
     document.getElementById('paymentpage').style.display = "block";
+    document.getElementById('rewardpage').style.display = "none"
 
     payment()
 
