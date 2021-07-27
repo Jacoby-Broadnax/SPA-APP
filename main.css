@@ -256,7 +256,7 @@ border-radius: 6px;
 
 .user-options {margin: auto; width: 92%;margin-top:35px;}
 
-.user-button {width: 100%; margin-bottom: 15px;background-color: white;border: solid 0.7px lightgray;border-radius: 10px;color: black;}
+.user-button {width: 100%; margin-bottom: 15px;background-color: #f1f1f1;border: none;border-radius:5px;color: black;}
 
 .user-button > h3 {    width: 100%;
   text-align: left;
@@ -267,7 +267,7 @@ border-radius: 6px;
 
 #setupSaveBTN {display: none;}
 
-.user-button > p {width: 100%; text-align: left;margin-left: 20px;padding-bottom: 16px;font-size: 14px;}
+.user-button > p {width: 100%; text-align: left;margin-left: 20px;padding-bottom: 16px;font-size: 13px;}
 
 .user-close {    float: right;
   color: #007AFF;
