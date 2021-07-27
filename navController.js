@@ -25,7 +25,7 @@ function listenNav(){
     document.getElementById('rewardpage').style.display = "none";
 
 }
-
+document.getElementById('fd').addEventListener('submit', run)
 function eventsNav(){
     document.getElementById('cIcon').style.opacity = "0.5";
     document.getElementById('lIcon').style.opacity = "0.5";
@@ -35,6 +35,8 @@ function eventsNav(){
     document.getElementById('homepage').style.display = "none";
     document.getElementById('paymentpage').style.display = "none";
     document.getElementById('rewardpage').style.display = "block";
+    document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');
+    document.getElementById('rewardUser').innerHTML = localStorage.getItem('datafname') + " " + localStorage.getItem('datalname');;
 
 
 }

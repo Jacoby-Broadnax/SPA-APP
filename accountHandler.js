@@ -32,6 +32,9 @@ function userState(){
     document.getElementById('overlay-icon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';
     document.getElementById('PfirstName').innerHTML= localStorage.getItem('datafname');
     document.getElementById('PlastName').innerHTML = localStorage.getItem('datalname');
-    document.getElementById('Pmail').innerHTML = localStorage.getItem('dataemail')
+    document.getElementById('Pmail').innerHTML = localStorage.getItem('dataemail');
+    document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');
+   
 }
+
 

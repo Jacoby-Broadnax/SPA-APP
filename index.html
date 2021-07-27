@@ -96,7 +96,7 @@ document.getElementById('pwa-banner').style.display='block';
 
         <div class="wrap-fixed">
         <div class="large-wrap">
-            <button onclick="document.getElementById('signup').style.display='block';document.getElementById('initial').style.display='block';document.getElementById('homepage').style.display='none';" class="large-confirm">Get Started</button>
+            <button onclick="document.getElementById('signup').style.display='block';document.getElementById('initial').style.display='block';document.getElementById('homepage').style.display='none';localStorage.setItem('au2val', '0')" class="large-confirm">Get Started</button>
         </div>
     </div>
     </div>
@@ -163,7 +163,7 @@ document.getElementById('pwa-banner').style.display='block';
     <div class="signup-wrapper">
         <h1>Shipping</h1>
     </div>
-    <form onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block';localStorage.setItem('userState', 'true');userState();return false;" class="form">
+    <form onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block';localStorage.setItem('userState', 'true');userState();document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');;return false;" class="form">
 
         
         <label>Street Address</label>
@@ -199,7 +199,7 @@ document.getElementById('pwa-banner').style.display='block';
 <div id="shippingBTN" class="button-wrapper">
     <button type="submit" class="large-confirm form-submit">Save Address</button>
 
-    <button onclick="document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block'; localStorage.setItem('userState', 'true');document.getElementById('pIcon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1img').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1icon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1title').innerHTML= localStorage.getItem('dataschool');" class="large-confirm form-submit">Skip</button>
+    <button onclick="document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block'; localStorage.setItem('userState', 'true');document.getElementById('pIcon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1img').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1icon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1title').innerHTML= localStorage.getItem('dataschool');document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');" class="large-confirm form-submit">Skip</button>
 </div>
        
     </form>
@@ -313,7 +313,7 @@ document.getElementById('dyn-sheet').style.display = "block";
     <div class="rewardPane vivify fadeIn duration-300">
         <div class="rewardwrapper">
             <p id="rewardUser">An Error Occured</p>
-            <h3 ><span>0</span> Points Available</h3>
+            <h3 ><span id="rewardUserItem">No</span> Points Available</h3>
         </div>
 
         <button class="redeemBtn">
@@ -645,6 +645,12 @@ cartCheck()
     localStorage.setItem('cartState', 'false');
     cartCheck()
   }
+
+  if(e.data.includes("reward")){
+    console.log(e.data);
+    console.log(e.data.substring(8))
+    localStorage.setItem('au2val', Math.round(e.data.substring(8) / 10 + parseInt(localStorage.getItem('au2val'))));
+  }
 });
 
 
@@ -705,5 +711,8 @@ cartCheck()
   </div>
 
   <script src="/accountHandler.js"></script>
+  <script>
+      document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');
+  </script>
 </body>
 </html>
