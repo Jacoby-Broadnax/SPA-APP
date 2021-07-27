@@ -48,7 +48,7 @@
 
 .pwa-wrapper {margin: auto; width: 95%;}
 
-.profile-icon {width: 40px;height: 40px; object-fit: cover;border: solid 1px lightgray;border-radius: 50px;position: absolute;right: 20px;top: 42px;}
+.profile-icon {width: 40px;height: 40px; object-fit: cover;border: solid 0.7px lightgray;border-radius: 50px;position: absolute;right: 20px;top: 42px;}
 
 .icon-img {position: absolute;
   width: 159px;
@@ -256,7 +256,7 @@ border-radius: 6px;
 
 .user-options {margin: auto; width: 92%;margin-top:35px;}
 
-.user-button {width: 100%; margin-bottom: 15px;background-color: #f1f1f1;border: none;border-radius:5px;color: black;}
+.user-button {width: 100%; margin-bottom: 15px;background-color: transparent;border: none;border-radius:5px;color: black;border: solid 0.7px rgb(235, 235, 235);}
 
 .user-button > h3 {    width: 100%;
   text-align: left;
@@ -313,6 +313,18 @@ border-radius: 6px;
   z-index: 98;}
 
 #cartpage {display: none;}
+
+#rewardpage {display: none;}
+
+.rewardwrapper {width: 55%;border: solid 1px lightgray;padding: 13px;border-radius: 5px;padding-left: 20px;}
+
+.redeemBtn {font-weight: 600;color: #003AFF;padding-left: 20px;padding-right: 20px;margin-left: 12px;background-color: transparent;border: solid 1px lightgray;border-radius: 5px;}
+
+.rewardPane {display: flex;justify-content: center;margin-top: 40px;}
+
+.rewardwrapper > p {font-size: 12px;}
+
+.rewardwrapper > h3 {font-size: 15px;font-weight: 600;}
 
 .cart-empty {position: absolute;
   top: 92px;
