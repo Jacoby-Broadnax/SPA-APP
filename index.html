@@ -578,9 +578,10 @@ console.log('message posted')
     <button id="RingW-done" onclick="closeAll('RingW')" class="close-all-btn">Done</button>
     <button class="view-all-btn" onclick="viewAll('RingW')">View All</button>
     <div id="RingW-wrapper" class="product-wrapper ">
-        <div class="product-title">
-            <h2 id="RingW-title" class="vivify fadeIn duration-300 ">Womens Rings</h2>
+        <div id="RingW-title" class="product-title">
+            <h2  class="vivify fadeIn duration-300 ">Womens Rings</h2>
         </div>
+        <div class="ringCenter">
      <div id="RingW-item" class="product-list ">
         <div id="RingW-spacer" class="product-spacer"></div>
     {{#each this}}
@@ -595,6 +596,7 @@ console.log('message posted')
     </div>
      
       {{/each}}
+</div>
       </div>
       </div>   
   </script>
