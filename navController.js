@@ -54,3 +54,17 @@ function contactNav(){
     payment()
 
 }
+
+function viewAll(title){
+document.getElementById(title + '-wrapper').classList.add('view-all-wrapper');
+document.getElementById(title + '-title').classList.add('view-all-title');
+document.getElementById(title + '-item').classList.add('view-all-item');
+document.getElementById(title + '-done').style.display='block';
+}
+
+function closeAll(title){
+    document.getElementById(title + '-wrapper').classList.remove('view-all-wrapper');
+    document.getElementById(title + '-title').classList.remove('view-all-title');
+    document.getElementById(title + '-item').classList.remove('view-all-item');
+    document.getElementById(title + '-done').style.display='none';
+}

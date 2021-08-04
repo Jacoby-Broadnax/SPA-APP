@@ -10,6 +10,8 @@
 
 .profile-icon {width: 50px;}
 
+
+
 .dev-menu {position: absolute;
   z-index: 1000;
   background-color: white;
@@ -95,11 +97,11 @@ border-radius: 6px;
 
 /*--------------Product Styling---------------*/
 
-.product-wrapper {height: 250px;}
+.product-wrapper {height: 250px;transition: 0.2s ease;}
 
 .product-list {width: 100%;overflow-x: scroll;white-space: nowrap;}
 
-.product-item {width:160px ;display: inline-block;margin-left: 10px;vertical-align: top;margin-top: 7px;}
+.product-item {width:160px ;display: inline-block;margin-left: 10px;vertical-align: top;margin-top: 7px;transition: 0.2s ease;}
 
 .product-item > img {width: 100%; border-radius: 4px; background-color: transparent;object-fit: cover;border: none;height: 160px;border: solid 0.7px lightgray;}
 
@@ -388,6 +390,45 @@ border-radius: 6px;
   text-overflow: ellipsis;}
 
 .confirm-wrapper > img {display: inline-block;padding: 20px;}
+
+/*--------------View All-----------------*/
+
+.view-all-wrapper {position: fixed;top: 0px;left: 0px; width: 100%; height: 100vh;background-color: white;overflow: scroll;z-index: 150;}
+
+.close-all-btn {position: fixed; top: 0px;right: 0px; z-index: 151;  font-weight: 600;
+  font-size: 15px;
+  padding: 10px;
+  color: rgb(45, 45, 255);
+  background-color: transparent;
+  border: none;display: none;}
+
+.view-all-item {white-space: initial;
+  overflow: auto;margin-top: 54px;}
+
+.view-all-title {     text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+ padding-top: 5px;
+  width:100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;position: fixed;z-index: 151;background-color: white;top: 0px;padding-bottom: 20px;left: 0px;border-bottom: solid 0.7px lightgray;}
+
+.view-all-btn {
+  font-weight: 600;
+  font-size: 13px;
+  padding: 10px;
+  color: rgb(45, 45, 255);
+  background-color: transparent;
+  border: none;
+  float: right;
+  margin-top: -8px;
+  margin-right: 7px;
+z-index: 150;
+position: relative;
+
+}
+
 /*--------------Bottom Navigation---------------*/
 
 .bottom-navigation {
