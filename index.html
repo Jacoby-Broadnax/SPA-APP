@@ -25,7 +25,7 @@
 
 <div id="pwa-banner"  class="pwa-banner">
     <div class="pwa-wrapper">
-        <img class="pwa-img" src="/assets/pwa.svg">
+        <img onclick="document.getElementById('pwa-banner').style.display='none';" class="pwa-img" src="/assets/pwa.svg">
     </div>
 
 </div>
@@ -225,6 +225,15 @@ document.getElementById('pwa-banner').style.display='block';
        <h3 class="vivify fadeIn">Your Carts Empty</h3> 
     </div>
     <iframe class="cart-frame" id="cartFrame" src="https://spa.ms/cart"></iframe>
+
+    <div class="cartRewarder">
+        <div class="rewarder">
+            <p>Use Rewards Points</p>
+            <h3>Get <span id="rewarder">$0</span> Off</h3>
+        </div>
+
+        <button>Redeem</button>
+    </div>
     </section>
 
 
@@ -316,7 +325,7 @@ document.getElementById('dyn-sheet').style.display = "block";
             <h3 ><span id="rewardUserItem">No</span> Points Available</h3>
         </div>
 
-        <button class="redeemBtn">
+        <button onclick="cartNav();" class="redeemBtn">
             Redeem
         </button>
     </div>
@@ -544,7 +553,7 @@ console.log('message posted')
   
     <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00">
      
-        <img src="rings/{{title}}.png">
+        <img class="ringImg" src="rings/{{title}}.png">
         <div class="product-text">
             <h3>${{summary}}</h3>
             <p>{{title}}</p>
@@ -576,7 +585,7 @@ console.log('message posted')
   
     <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00">
      
-        <img src="rings/{{title}}.png">
+        <img class="ringImg" src="rings/{{title}}.png">
         <div class="product-text">
             <h3>${{summary}}</h3>
             <p>{{title}}</p>
