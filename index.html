@@ -476,14 +476,17 @@ console.log('message posted')
   </script>
 
   <script id="item-templateA" type="text/x-handlebars-template">
-    <div class="product-wrapper">
-        <div class="product-title">
+    <button id="Grad-done" onclick="closeAll('Grad')" class="close-all-btn">Done</button>
+    <button style="margin-top: -2px;" class="view-all-btn" onclick="viewAll('Grad')">View All</button>
+    <div id="Grad-wrapper" class="product-wrapper">
+        <div id="Grad-title" class="product-title">
             <h2 style="border-top: solid 0.7px transparent;
             width: 96%;
             padding-top: 5px;" class="vivify fadeIn duration-300">Senior Grad Products</h2>
         </div>
-     <div class="product-list">
-        <div class="product-spacer"></div>
+        <div id="Grad-center" >
+     <div id="Grad-item" class="product-list">
+        <div id="Grad-spacer" class="product-spacer"></div>
     {{#each this}}
   
     <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00">
@@ -495,6 +498,7 @@ console.log('message posted')
     </div>
      
       {{/each}}
+      </div>
       </div>
       </div>   
   </script>
