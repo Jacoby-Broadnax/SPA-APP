@@ -543,12 +543,15 @@ console.log('message posted')
   </script>
 
   <script id="item-templateC" type="text/x-handlebars-template">
-    <div class="product-wrapper">
-        <div class="product-title">
+    <button id="Ring-done" onclick="closeAll('Ring')" class="close-all-btn">Done</button>
+    <button class="view-all-btn" onclick="viewAll('Ring')">View All</button>
+    <div id="Ring-wrapper" class="product-wrapper">
+        <div id="Ring-title" class="product-title">
             <h2 class="vivify fadeIn duration-300">Mens Rings</h2>
         </div>
-     <div class="product-list">
-        <div class="product-spacer"></div>
+        <div id="Ring-center" >
+     <div id="Ring-item" class="product-list">
+        <div id="Ring-spacer" class="product-spacer"></div>
     {{#each this}}
   
     <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00">
@@ -562,6 +565,7 @@ console.log('message posted')
      
       {{/each}}
       </div>
+    </div>
       </div>   
   </script>
 
