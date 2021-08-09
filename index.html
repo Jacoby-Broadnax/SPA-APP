@@ -490,9 +490,9 @@ console.log('message posted')
     {{#each this}}
   
     <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00">
-        <img src="gradproducts/grad{{id}}.webp">
+        <img src="{{image}}">
         <div class="product-text">
-            <h3>${{summary}}.00</h3>
+            <h3>${{summary}}</h3>
             <p>{{title}}</p>
         </div>
     </div>
