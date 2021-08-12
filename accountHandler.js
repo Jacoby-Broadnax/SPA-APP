@@ -10,6 +10,7 @@ if ("userState" in localStorage){
     document.getElementById('fy2img').src= 'announcements/' + localStorage.getItem('dataschool') + '.jpg';
     document.getElementById('fy2title').innerText = 'For ' + localStorage.getItem('datafname');
     document.getElementById('overlay-icon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';
+
     document.getElementById('PfirstName').innerHTML= localStorage.getItem('datafname');
     document.getElementById('PlastName').innerHTML = localStorage.getItem('datalname');
     document.getElementById('Pmail').innerHTML = localStorage.getItem('dataemail');
