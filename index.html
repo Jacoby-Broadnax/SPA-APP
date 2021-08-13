@@ -143,8 +143,18 @@ document.getElementById('pwa-banner').style.display='block';
             <div class=" halfed">
                 <label>School</label>
                 <br>
-               <div id="schools">
-                   </div>
+              
+                <select required onchange="accountStore('school', document.getElementById('school').value)" id="school" class="text-input select-input">
+                    <option value="" selected disabled hidden>Select School</option>
+<optgroup id="schools" label="Mascot Package Available">
+
+</optgroup>
+
+<optgroup id="schools2" label="Mascot Package Unavailable">
+
+</optgroup>
+                    </select>
+                 
             </div>   
         </div>
 
@@ -331,7 +341,7 @@ document.getElementById('dyn-sheet').style.display = "block";
 
     <div style="display: none;" class="rewardPane vivify fadeIn duration-300">
         <div class="rewardwrapper">
-            <p id="rewardUser">An Error Occured</p>
+            <p id="rewardUser">An Error Occured Tap Done</p>
             <h3 ><span id="rewardUserItem">No</span> Points Available</h3>
         </div>
 
@@ -458,7 +468,7 @@ console.log('message posted')
             <p id="s1text">Home</p>
         </button>
  
-        <button id="eIcon" onclick="eventsNav()" class="bottom-item">
+        <button  id="eIcon" onclick="eventsNav()" class="bottom-item">
          <div class="bottom-icon">
              <img id="bicon2" class="bicon" src="assets/account_circle-24px.svg">
          </div>
@@ -645,15 +655,38 @@ console.log('message posted')
 
   <script id="item-templateE" type="text/x-handlebars-template">
 
-    <select required onchange="accountStore('school', document.getElementById('school').value)" id="school" class="text-input select-input">
-        <option value="" selected disabled hidden>Select School</option>
+  
 
     {{#each this}}
   
    <option value="{{school}}">{{school}}</option>
      
       {{/each}}
-    </select>  
+  
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/scholastic/schools3', function (data) {
+        var template = Handlebars.compile($('#item-templateU').html())
+        $('#schools2').html(template(data.schools3))
+      })
+    })
+  </script>
+
+  <script id="item-templateU" type="text/x-handlebars-template">
+
+  
+
+    {{#each this}}
+  
+   <option value="{{name}}">{{name}}</option>
+     
+      {{/each}}
+  
   </script>
   <script>
   window.addEventListener('message', function(e) {
