@@ -106,7 +106,7 @@ border-radius: 6px;
 
 .product-item {width:160px ;display: inline-block;margin-left: 10px;vertical-align: top;margin-top: 7px;transition: 0.2s ease;}
 
-.product-item > img {width: 100%; border-radius: 4px; background-color: transparent;object-fit: scale-down;border: none;height: 160px;border: solid 0.7px lightgray;}
+.product-item > img {width: 100%; border-radius: 7px; background-color: transparent;object-fit: scale-down;border: none;height: 160px;border: solid 0.7px lightgray;}
 
 .product-text > h3 {font-size: 14px;font-weight: 600;width: 100%;
   white-space: pre-wrap;
@@ -460,8 +460,8 @@ position: relative;
   }
   
   .bottom-item {
-    margin-left: 4%;
-    margin-right: 4%;
+    margin-left: 5%;
+    margin-right: 5%;
     background-color: transparent;
     height: fit-content;
     width: fit-content;
