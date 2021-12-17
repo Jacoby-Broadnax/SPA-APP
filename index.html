@@ -57,6 +57,7 @@ document.getElementById('pwa-banner').style.display='block';
     <iframe id="loadGear"></iframe>
     <iframe id="loadRing"></iframe>
     <iframe id="loadWRings"></iframe>
+    <iframe src="https://spa.ms/championship-ring-order-form/"></iframe>
 </div>
 
 <!----------------------Initial Screen-------------------->
@@ -513,6 +514,14 @@ console.log('message posted')
         <div id="Grad-center" >
      <div id="Grad-item" class="product-list">
         <div id="Grad-spacer" class="product-spacer"></div>
+
+        <div onclick="dynSheet('Championship Ring Order Form', 'https://spa.ms/championship-ring-order-form/')" class="product-item vivify fadeIn delay-{{id}}00">
+            <img src="/gradproducts/IMG-9072.JPEG">
+            <div class="product-text">
+                <h3>$239.95</h3>
+                <p>Championship Ring (Bay Springs ONLY)</p>
+            </div>
+        </div>
     {{#each this}}
   
     <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00">
@@ -549,6 +558,7 @@ console.log('message posted')
         </div>
      <div class="product-list">
         <div class="product-spacer"></div>
+        
     {{#each this}}
   
     <div onclick="dynSheet('{{title}}', '{{url}}')" class="product-item vivify fadeIn delay-{{id}}00">
