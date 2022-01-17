@@ -1,6 +1,10 @@
 function accountStore(title, desc){
 localStorage.setItem('data' + title, desc);
+
+
 }
+
+
 
 if ("userState" in localStorage){
     document.getElementById('pIcon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';
@@ -10,7 +14,6 @@ if ("userState" in localStorage){
     document.getElementById('fy2img').src= 'announcements/' + localStorage.getItem('dataschool') + '.jpg';
     document.getElementById('fy2title').innerText = 'For ' + localStorage.getItem('datafname');
     document.getElementById('overlay-icon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';
-
     document.getElementById('PfirstName').innerHTML= localStorage.getItem('datafname');
     document.getElementById('PlastName').innerHTML = localStorage.getItem('datalname');
     document.getElementById('Pmail').innerHTML = localStorage.getItem('dataemail');
@@ -35,7 +38,17 @@ function userState(){
     document.getElementById('PlastName').innerHTML = localStorage.getItem('datalname');
     document.getElementById('Pmail').innerHTML = localStorage.getItem('dataemail');
     document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');
+    if(localStorage.getItem('dataschool') == 'Bay Springs HS'){
+        document.getElementById('bayhigh').style.display='block'
+    }else {
+        document.getElementById('bayhigh').style.display='none'
+    }
    
 }
-
-
+if(localStorage.getItem('dataschool') == 'Bay Springs HS'){
+    if(localStorage.getItem('dataschool') == 'Bay Springs HS'){
+        document.getElementById('bayhigh').style.display='block'
+    }else {
+        document.getElementById('bayhigh').style.display='none'
+    }
+}
