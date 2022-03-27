@@ -110,7 +110,7 @@ document.getElementById('pwa-banner').style.display='block';
     <div class="signup-wrapper">
         <h1 id="signup-text">Sign Up</h1>
     </div>
-    <form class="form" onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='block';userState();return false;">
+    <div class="form" onsubmit=";;userState();btnClick()">
 
         <div class="halfed-input">
             <div class="halfed first-half">
@@ -159,9 +159,9 @@ document.getElementById('pwa-banner').style.display='block';
 
     <button type="reset" id="setupSaveBTN" onclick="document.getElementById('signup').style.display='none';userState();document.getElementById('shipping').style.display='none';" class="large-confirm form-submit">Done</button>
 
-        <button id="setupBTN" type="submit" class="large-confirm form-submit">Submit</button>
+        <button id="setupBTN" onclick="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='block'" type="submit" class="large-confirm form-submit">Submit</button>
       
-    </form>
+    </div>
 </div>
 
 
@@ -172,8 +172,15 @@ document.getElementById('pwa-banner').style.display='block';
     <div class="signup-wrapper">
         <h1>Shipping</h1>
     </div>
-    <form onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block';localStorage.setItem('userState', 'true');userState();document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');;return false;" class="form">
+    <form onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block';localStorage.setItem('userState', 'true');userState();document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');;btnClick();" class="form">
 
+        <script>
+            function btnClick() {
+    
+        return false;
+}
+
+        </script>
         
         <label>Street Address</label>
         <br>
