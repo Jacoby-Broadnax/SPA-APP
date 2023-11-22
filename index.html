@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,514 +12,547 @@
     <meta name="theme-color" content="#ffffff">
     <script src="https://cdn.jsdelivr.net/npm/webauthn-simple-app/dist/webauthn-simple-app.umd.js"></script>
     <title>SPA App</title>
-    <link rel= 'stylesheet' href="/main.css">
+    <link rel='stylesheet' href="/main.css">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
-   
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+
     <script src="/navController.js"></script>
     <script src="/actionSheet.js"></script>
- 
+
     <link rel="stylesheet" href="/vivify.min.css">
     <meta name="theme-color" content="#171717">
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "dparx3benr");
     </script>
 </head>
+
 <body onload="document.getElementById('dyn-sheet').style.display = 'none';">
 
-<div style="display: none !important;"  class="pwa-banner">
-    <div class="pwa-wrapper">
-        <img onclick="document.getElementById('pwa-banner').style.display='none';" class="pwa-img" src="/assets/pwa.svg">
-    </div>
-
-</div>
-
-<div class="item-loader" id="item-loader">
-    <img  src="https://i.gifer.com/ZZ5H.gif">
-    <p>Loading Product...</p>
-</div>
-<script>
-// Detects if device is on iOS 
-const isIos = () => {
-  const userAgent = window.navigator.userAgent.toLowerCase();
-  return /iphone|ipad|ipod/.test( userAgent );
-}
-// Detects if device is in standalone mode
-const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-
-// Checks if should display install popup notification:
-if (isIos() && !isInStandaloneMode()) {
-document.getElementById('pwa-banner').style.display='block';
-}
-</script>
-
-
-
-<div style="display: none;" class="load-bundler">
-    <iframe id="loadGrad"></iframe>
-    <iframe id="loadProduct"></iframe>
-    <iframe id="loadGear"></iframe>
-    <iframe id="loadRing"></iframe>
-    <iframe id="loadWRings"></iframe>
-    <iframe src="https://spa.ms/championship-ring-order-form/"></iframe>
-    <iframe src="https://spa.ms/senior-products/"></iframe>
-</div>
-
-<!----------------------Initial Screen-------------------->
-
-<div style="display:none !important" id="initial" class="initial">
-    <div class="initial-wrapper">
-        <div class="initial-text">
-            <h2>Welcome To The SPA App</h2>
-            <p>Scholastic Products & Awards</p>
+    <div style="display: none !important;" class="pwa-banner">
+        <div class="pwa-wrapper">
+            <img onclick="document.getElementById('pwa-banner').style.display='none';" class="pwa-img"
+                src="/assets/pwa.svg">
         </div>
 
-        <div  class="initial-feed">
-            <div class="feed-item">
-             <img src="/assets/searchblue.svg">
-             <div class="feed-text">
-                 <h3>Search</h3>
-                 <p>Search through our large catalog of quality products. Find the right product for you.</p>
-             </div>   
+    </div>
+
+    <div class="item-loader" id="item-loader">
+        <img src="https://i.gifer.com/ZZ5H.gif">
+        <p>Loading Product...</p>
+    </div>
+    <script>
+        // Detects if device is on iOS 
+        const isIos = () => {
+            const userAgent = window.navigator.userAgent.toLowerCase();
+            return /iphone|ipad|ipod/.test(userAgent);
+        }
+        // Detects if device is in standalone mode
+        const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+        // Checks if should display install popup notification:
+        if (isIos() && !isInStandaloneMode()) {
+            document.getElementById('pwa-banner').style.display = 'block';
+        }
+    </script>
+
+
+
+    <div style="display: none;" class="load-bundler">
+        <iframe id="loadGrad"></iframe>
+        <iframe id="loadProduct"></iframe>
+        <iframe id="loadGear"></iframe>
+        <iframe id="loadRing"></iframe>
+        <iframe id="loadWRings"></iframe>
+        <iframe src="https://spa.ms/championship-ring-order-form/"></iframe>
+        <iframe src="https://spa.ms/senior-products/"></iframe>
+    </div>
+
+    <!----------------------Initial Screen-------------------->
+
+    <div style="display:none !important" id="initial" class="initial">
+        <div class="initial-wrapper">
+            <div class="initial-text">
+                <h2>Welcome To The SPA App</h2>
+                <p>Scholastic Products & Awards</p>
             </div>
 
-            <div class="feed-item">
-                <img src="/assets/rewardblue.svg">
-                <div class="feed-text">
-                    <h3>Rewards</h3>
-                    <p>With every purchase get reward points. Redeem those points for free products</p>
-                </div>   
-               </div>
+            <div class="initial-feed">
+                <div class="feed-item">
+                    <img src="/assets/searchblue.svg">
+                    <div class="feed-text">
+                        <h3>Search</h3>
+                        <p>Search through our large catalog of quality products. Find the right product for you.</p>
+                    </div>
+                </div>
 
-               <div class="feed-item">
-                <img src="/assets/profileblue.svg">
-                <div class="feed-text">
-                    <h3>Account</h3>
-                    <p>With an account quickly make payments and have all of your info saved for the next one. </p>
-                </div>   
-               </div>
-        </div>
+                <div class="feed-item">
+                    <img src="/assets/rewardblue.svg">
+                    <div class="feed-text">
+                        <h3>Rewards</h3>
+                        <p>With every purchase get reward points. Redeem those points for free products</p>
+                    </div>
+                </div>
 
-        <div class="wrap-fixed">
-        <div class="large-wrap">
-            <button onclick="document.getElementById('signup').style.display='block';document.getElementById('initial').style.display='block';document.getElementById('homepage').style.display='none';localStorage.setItem('au2val', '0')" class="large-confirm">Get Started</button>
-        </div>
-    </div>
-    </div>
-</div>
-
-
-<!----------------------Sign up Form-------------------->
-
-<div id="signup" class="signup vivify fadeInRight duration-300">
-    <div class="signup-wrapper">
-        <h1 id="signup-text">Sign Up</h1>
-    </div>
-    <div class="form" onsubmit=";;userState();btnClick()">
-
-        <div class="halfed-input">
-            <div class="halfed first-half">
-                <label>First Name</label>
-                <br>
-                <input required oninput="accountStore('fname', document.getElementById('fname').value)" class="text-input " id="fname" type="text">
+                <div class="feed-item">
+                    <img src="/assets/profileblue.svg">
+                    <div class="feed-text">
+                        <h3>Account</h3>
+                        <p>With an account quickly make payments and have all of your info saved for the next one. </p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="halfed">
-                <label>Last Name</label>
-                <br>
-                <input required oninput="accountStore('lname', document.getElementById('lname').value)" class="text-input " id="lname" type="text">
-            </div>   
-        </div>
 
-        
-
-        <label>Email</label>
-        <br>
-        <input required oninput="accountStore('email', document.getElementById('email').value)" class="text-input flattened" type="email" id="email">
-
-        
-
-        <div class="halfed-input">
-            <div class=" halfed first-half">
-                <label>Phone Number</label>
-                <br>
-                <input required oninput="accountStore('number', document.getElementById('number').value)" class="text-input " id="number" type="tel">
+            <div class="wrap-fixed">
+                <div class="large-wrap">
+                    <button
+                        onclick="document.getElementById('signup').style.display='block';document.getElementById('initial').style.display='block';document.getElementById('homepage').style.display='none';localStorage.setItem('au2val', '0')"
+                        class="large-confirm">Get Started</button>
+                </div>
             </div>
-         
-            <div class=" halfed">
-                <label>School</label>
-                <br>
-              
-                <select required onchange="accountStore('school', document.getElementById('school').value)" id="school" class="text-input select-input">
-                    <option value="" selected disabled hidden>Select School</option>
+        </div>
+    </div>
 
 
-<optgroup id="schools2" label="Select School">
+    <!----------------------Sign up Form-------------------->
 
-</optgroup>
+    <div id="signup" class="signup vivify fadeInRight duration-300">
+        <div class="signup-wrapper">
+            <h1 id="signup-text">Sign Up</h1>
+        </div>
+        <div class="form" onsubmit=";;userState();btnClick()">
+
+            <div class="halfed-input">
+                <div class="halfed first-half">
+                    <label>First Name</label>
+                    <br>
+                    <input required oninput="accountStore('fname', document.getElementById('fname').value)"
+                        class="text-input " id="fname" type="text">
+                </div>
+
+                <div class="halfed">
+                    <label>Last Name</label>
+                    <br>
+                    <input required oninput="accountStore('lname', document.getElementById('lname').value)"
+                        class="text-input " id="lname" type="text">
+                </div>
+            </div>
+
+
+
+            <label>Email</label>
+            <br>
+            <input required oninput="accountStore('email', document.getElementById('email').value)"
+                class="text-input flattened" type="email" id="email">
+
+
+
+            <div class="halfed-input">
+                <div class=" halfed first-half">
+                    <label>Phone Number</label>
+                    <br>
+                    <input required oninput="accountStore('number', document.getElementById('number').value)"
+                        class="text-input " id="number" type="tel">
+                </div>
+
+                <div class=" halfed">
+                    <label>School</label>
+                    <br>
+
+                    <select required onchange="accountStore('school', document.getElementById('school').value)"
+                        id="school" class="text-input select-input">
+                        <option value="" selected disabled hidden>Select School</option>
+
+
+                        <optgroup id="schools2" label="Select School">
+
+                        </optgroup>
                     </select>
-                 
-            </div>   
-        </div>
 
-    <button type="reset" id="setupSaveBTN" onclick="document.getElementById('signup').style.display='none';userState();document.getElementById('shipping').style.display='none';" class="large-confirm form-submit">Done</button>
-
-        <button id="setupBTN" onclick="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='block'" type="submit" class="large-confirm form-submit">Submit</button>
-      
-    </div>
-</div>
-
-
-
-<!----------------------Address Form-------------------->
-
-<div id="shipping" class="shipping vivify fadeInRight duration-300">
-    <div class="signup-wrapper">
-        <h1>Shipping</h1>
-    </div>
-    <form onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block';localStorage.setItem('userState', 'true');userState();document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');;btnClick();" class="form">
-
-        <script>
-            function btnClick() {
-    
-        return false;
-}
-
-        </script>
-        
-        <label>Street Address</label>
-        <br>
-        <input oninput="accountStore('address', document.getElementById('saddress').value)"  class="text-input flattened" type="text" id="saddress" required>
-
-        <label>Apartment, suite, etc</label>
-        <br>
-        <input oninput="accountStore('apt', document.getElementById('apt').value)"  class="text-input flattened" type="text" id="apt">
-
-        
-
-        <div class="halfed-input">
-            <div class="halfed first-half">
-                <label>City</label>
-                <br>
-                <input oninput="accountStore('city', document.getElementById('city').value)"  required class="text-input " id="city" type="text">
+                </div>
             </div>
-            
-            <div class="halfed">
-                <label>State</label>
-                <br>
-                <input oninput="accountStore('state', document.getElementById('state').value)"  required class="text-input " id="state" type="text">
-            </div>   
-        </div>
 
-        <label>Zip Code</label>
-        <br>
-        <input oninput="accountStore('zip', document.getElementById('zip').value)"  required class="text-input flattened" type="text" id="zip">
+            <button type="reset" id="setupSaveBTN"
+                onclick="document.getElementById('signup').style.display='none';userState();document.getElementById('shipping').style.display='none';"
+                class="large-confirm form-submit">Done</button>
 
-        <button type="reset" id="shippingSaveBTN" onclick="document.getElementById('signup').style.display='none';userState();document.getElementById('shipping').style.display='none';" class="large-confirm form-submit">Done</button>
-  
-<div id="shippingBTN" class="button-wrapper">
-    <button type="submit" class="large-confirm form-submit">Save Address</button>
+            <button id="setupBTN"
+                onclick="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='block'"
+                type="submit" class="large-confirm form-submit">Submit</button>
 
-    <button onclick="document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block'; localStorage.setItem('userState', 'true');document.getElementById('pIcon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1img').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1icon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1title').innerHTML= localStorage.getItem('dataschool');document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');" class="large-confirm form-submit">Skip</button>
-</div>
-       
-    </form>
-</div>
-
-<div onclick="cartNav()" id="cartConfirm" class="cart-confirm">
-    <div class="confirm-wrapper">
-        <img src="/assets/shopping_cart_black_24dp.svg">
-        <div class="confirm-text">
-            <h4 id="cartHero">Added To Cart</h4>
-            <p id="cartItem">Placeholder Text</p>
         </div>
     </div>
-    
-</div>
 
-<section id="paymentpage">
-<iframe src="https://spa.ms/make-a-payment/" class="cart-frame" id="payFrame"></iframe>
-</section>
 
-<section id="cartpage">
-    <div class="cart-empty " id="cartEmpty">
-       <h3 class="vivify fadeIn">Your Carts Empty</h3> 
+
+    <!----------------------Address Form-------------------->
+
+    <div id="shipping" class="shipping vivify fadeInRight duration-300">
+        <div class="signup-wrapper">
+            <h1>Shipping</h1>
+        </div>
+        <form
+            onsubmit="document.getElementById('signup').style.display='none';document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block';localStorage.setItem('userState', 'true');userState();document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');;btnClick();"
+            class="form">
+
+            <script>
+                function btnClick() {
+
+                    return false;
+                }
+
+            </script>
+
+            <label>Street Address</label>
+            <br>
+            <input oninput="accountStore('address', document.getElementById('saddress').value)"
+                class="text-input flattened" type="text" id="saddress" required>
+
+            <label>Apartment, suite, etc</label>
+            <br>
+            <input oninput="accountStore('apt', document.getElementById('apt').value)" class="text-input flattened"
+                type="text" id="apt">
+
+
+
+            <div class="halfed-input">
+                <div class="halfed first-half">
+                    <label>City</label>
+                    <br>
+                    <input oninput="accountStore('city', document.getElementById('city').value)" required
+                        class="text-input " id="city" type="text">
+                </div>
+
+                <div class="halfed">
+                    <label>State</label>
+                    <br>
+                    <input oninput="accountStore('state', document.getElementById('state').value)" required
+                        class="text-input " id="state" type="text">
+                </div>
+            </div>
+
+            <label>Zip Code</label>
+            <br>
+            <input oninput="accountStore('zip', document.getElementById('zip').value)" required
+                class="text-input flattened" type="text" id="zip">
+
+            <button type="reset" id="shippingSaveBTN"
+                onclick="document.getElementById('signup').style.display='none';userState();document.getElementById('shipping').style.display='none';"
+                class="large-confirm form-submit">Done</button>
+
+            <div id="shippingBTN" class="button-wrapper">
+                <button type="submit" class="large-confirm form-submit">Save Address</button>
+
+                <button
+                    onclick="document.getElementById('shipping').style.display='none';document.getElementById('initial').style.display='none';document.getElementById('homepage').style.display='block'; localStorage.setItem('userState', 'true');document.getElementById('pIcon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1img').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1icon').src = 'logo/' + localStorage.getItem('dataschool') + '.jpg';document.getElementById('fy1title').innerHTML= localStorage.getItem('dataschool');document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');"
+                    class="large-confirm form-submit">Skip</button>
+            </div>
+
+        </form>
     </div>
-    <iframe class="cart-frame" id="cartFrame" src="https://spa.ms/cart"></iframe>
 
-    <div class="cartRewarder">
-        <div class="rewarder">
-            <p>Use Rewards Points</p>
-            <h3>Get <span id="rewarder">$0</span> Off</h3>
+    <div onclick="cartNav()" id="cartConfirm" class="cart-confirm">
+        <div class="confirm-wrapper">
+            <img src="/assets/shopping_cart_black_24dp.svg">
+            <div class="confirm-text">
+                <h4 id="cartHero">Added To Cart</h4>
+                <p id="cartItem">Placeholder Text</p>
+            </div>
         </div>
 
-        <button>Redeem</button>
     </div>
+
+    <section id="paymentpage">
+        <iframe src="https://spa.ms/make-a-payment/" class="cart-frame" id="payFrame"></iframe>
+    </section>
+
+    <section id="cartpage">
+        <div class="cart-empty " id="cartEmpty">
+            <h3 class="vivify fadeIn">Your Carts Empty</h3>
+        </div>
+        <iframe class="cart-frame" id="cartFrame" src="https://spa.ms/cart"></iframe>
+
+        <div class="cartRewarder">
+            <div class="rewarder">
+                <p>Use Rewards Points</p>
+                <h3>Get <span id="rewarder">$0</span> Off</h3>
+            </div>
+
+            <button>Redeem</button>
+        </div>
     </section>
 
 
-   <section id="homepage">
-       <h1 ondblclick="document.getElementById('dev-menu').style.display='block'" class="page-title">Home</h1>
+    <section id="homepage">
+        <h1 ondblclick="document.getElementById('dev-menu').style.display='block'" class="page-title">Home</h1>
 
-       <div id="dev-menu" class="dev-menu">
-           <h2>Dev Menu</h2>
-           <button onclick="localStorage.clear(); window.location.reload()">Reset Local Storage</button>
-       </div>
-   
-           <img onclick="document.getElementById('profileOverlay').style.display='block'" id="pIcon" class="profile-icon" src="/assets/logo.png">
-           
-    <div class="search-wrapper">
-        <div class="search-field">
-            <img src="/assets/search-24px (1).svg">
-            <input placeholder="" class="search-input" type="text">
-        </div>
-    </div>
-   
-
-
-    <div class="product-wrapper">
-        <div class="product-title">
-            <h2 class="vivify fadeIn duration-300">Featured</h2>
-        </div>
-     <div class="product-list">
-        <div class="product-spacer"></div>
-    
-    <script>
-      function mascotPKG(){
-    fetch('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/scholastic/schools3?filter[school]=' + localStorage.getItem('dataschool'), { 
-    method: 'GET'
-    })
-    .then(function(response) { return response.json(); })
-    .then(function(schools) {
-    console.log(schools.schools[0].prop)
-    dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#WidgetStore' + schools.schools[0].prop );
-    document.getElementById('item-loader').style.display = "none";
-    document.getElementById('dyn-sheet').style.display = "block";
-    });  
-    }
-      </script>
-    <div onclick="dynSheet('{{title}}', 'https://spa.ms/senior-products/');mascotPKG();" class="product-item vivify fadeIn delay-200" style="border: none;">
-        <img style="border:none" id="fy1img" src="gradproducts/grad{{id}}.webp">
-        <div class="icon-img">
-            <img id="fy1icon" src="/assets/logo.png">
-        </div>
-        <div class="product-text">
-            <h3 id="fy1sum">Mascot Package</h3>
-            <p id="fy1title">{{title}}</p>
-           
-        </div>
-    </div>
-    
-    
-    <div onclick="var anounce = true;dynSheet('Request Digital Senior Banner', 'https://spa.ms/digital-copy-of-senior-banner'); " class="product-item vivify fadeIn delay-300" >
-        <img style="object-fit: cover;"  src="https://spa.ms/wp-content/uploads/2021/08/giphy-1.gif">
-    
-        <div class="product-text">
-            <h3 >Request Digital Copy Of Senior Banner</h3>
-            <p >$25.00</p>
-        </div>
-    </div>
-    
-    <div style="margin-right: 15px;" onclick="var anounce = true;dynSheet('Announcements', 'https://spa.ms/official-graduate-announcements/'); document.getElementById('item-loader').style.display = 'none';document.getElementById('dyn-sheet').style.display='block'" class="product-item vivify fadeIn delay-300" >
-        <img style="object-fit: cover;" id="fy2img" src="gradproducts/grad{{id}}.webp">
-    
-        <div class="product-text">
-            <h3 id="fy2sum">Order Grad Official Announcements</h3>
-            <p>Starting at $27.75 </p>
-            <p style="display: none;" id="fy2title">{{title}}</p>
-        </div>
-    </div>
-    <div class="end-item"></div>
-    
-      </div>
-      </div>   
-
-      <div class="item-wrapper" id="gradproducts"></div> 
-      <div class="item-wrapper" id="gear"></div>
-    
-
-
-
-
- 
-
-<div class="item-wrapper" id="wrings"></div>
-<div class="item-wrapper" id="rings"></div>
-
-
-</section>
-
-
-<section id="rewardpage">
-    <h1 style="margin-left: 16px;" ondblclick="document.getElementById('dev-menu').style.display='block'" class="page-title">Rewards</h1>
-
-    <div style="display: none;" class="rewardPane vivify fadeIn duration-300">
-        <div class="rewardwrapper">
-            <p id="rewardUser">An Error Occured Tap Done</p>
-            <h3 ><span id="rewardUserItem">No</span> Points Available</h3>
+        <div id="dev-menu" class="dev-menu">
+            <h2>Dev Menu</h2>
+            <button onclick="localStorage.clear(); window.location.reload()">Reset Local Storage</button>
         </div>
 
-        <button onclick="cartNav();" class="redeemBtn">
-            Redeem
-        </button>
+        <img onclick="document.getElementById('profileOverlay').style.display='block'" id="pIcon" class="profile-icon"
+            src="/assets/logo.png">
+
+        <div class="search-wrapper">
+            <div class="search-field">
+                <img src="/assets/search-24px (1).svg">
+                <input placeholder="" class="search-input" type="text">
+            </div>
+        </div>
+
+
+
+        <div class="product-wrapper">
+            <div class="product-title">
+                <h2 class="vivify fadeIn duration-300">Featured</h2>
+            </div>
+            <div class="product-list">
+                <div class="product-spacer"></div>
+
+                <script>
+                    function mascotPKG() {
+                        fetch('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/scholastic/schools3?filter[school]=' + localStorage.getItem('dataschool'), {
+                            method: 'GET'
+                        })
+                            .then(function (response) { return response.json(); })
+                            .then(function (schools) {
+                                console.log(schools.schools[0].prop)
+                                dynSheet(localStorage.getItem('dataschool'), 'https://spa.ms/senior-products/#WidgetStore' + schools.schools[0].prop);
+                                document.getElementById('item-loader').style.display = "none";
+                                document.getElementById('dyn-sheet').style.display = "block";
+                            });
+                    }
+                </script>
+                <div onclick="dynSheet('{{title}}', 'https://spa.ms/senior-products/');mascotPKG();"
+                    class="product-item vivify fadeIn delay-200" style="border: none;">
+                    <img style="border:none" id="fy1img" src="gradproducts/grad{{id}}.webp">
+                    <div class="icon-img">
+                        <img id="fy1icon" src="/assets/logo.png">
+                    </div>
+                    <div class="product-text">
+                        <h3 id="fy1sum">Mascot Package</h3>
+                        <p id="fy1title">{{title}}</p>
+
+                    </div>
+                </div>
+
+
+                <div onclick="var anounce = true;dynSheet('Request Digital Senior Banner', 'https://spa.ms/request-digital-copy-of-senior-banner/'); "
+                    class="product-item vivify fadeIn delay-300">
+                    <img style="object-fit: cover;" src="https://spa.ms/wp-content/uploads/2021/08/giphy-1.gif">
+
+                    <div class="product-text">
+                        <h3>Request Digital Copy Of Senior Banner</h3>
+                        <p>$30.00</p>
+                    </div>
+                </div>
+
+                <div style="margin-right: 15px;"
+                    onclick="var anounce = true;dynSheet('Announcements', 'https://spa.ms/official-graduate-announcements/'); document.getElementById('item-loader').style.display = 'none';document.getElementById('dyn-sheet').style.display='block'"
+                    class="product-item vivify fadeIn delay-300">
+                    <img style="object-fit: cover;" id="fy2img" src="gradproducts/grad{{id}}.webp">
+
+                    <div class="product-text">
+                        <h3 id="fy2sum">Order Grad Official Announcements</h3>
+                        <p>Starting at $27.75 </p>
+                        <p style="display: none;" id="fy2title">{{title}}</p>
+                    </div>
+                </div>
+                <div class="end-item"></div>
+
+            </div>
+        </div>
+
+        <div class="item-wrapper" id="gradproducts"></div>
+        <div class="item-wrapper" id="gear"></div>
+
+
+
+
+
+
+
+        <div class="item-wrapper" id="wrings"></div>
+        <div class="item-wrapper" id="rings"></div>
+
+
+    </section>
+
+
+    <section id="rewardpage">
+        <h1 style="margin-left: 16px;" ondblclick="document.getElementById('dev-menu').style.display='block'"
+            class="page-title">Rewards</h1>
+
+        <div style="display: none;" class="rewardPane vivify fadeIn duration-300">
+            <div class="rewardwrapper">
+                <p id="rewardUser">An Error Occured Tap Done</p>
+                <h3><span id="rewardUserItem">No</span> Points Available</h3>
+            </div>
+
+            <button onclick="cartNav();" class="redeemBtn">
+                Redeem
+            </button>
+        </div>
+
+        <div class="rewarddesc vivify fadeIn duration-300">
+            <h3>Currently Unavailable</h3>
+            <p>Rewards coming soon. Thank you for your patience. </p>
+        </div>
+
+        <div style="display: none;" class="rewarddesc vivify fadeIn duration-300">
+            <h3>Get cash towards your next purchase.</h3>
+            <p>For every $10.00 you spend in our app get 100 points towards your next app purchase. </p>
+
+            <h3>Redeem app points</h3>
+            <p>To apply your rewards points towards your purchase tap redeem anytime your at checkout. </p>
+        </div>
+    </section>
+
+    <div id="dyn-sheet" class="dyn-sheet ">
+        <div class="sheet-title">
+            <div class="title-wrapper">
+                <h2 id="sheetTitle">An Error Occured</h2>
+            </div>
+
+            <button onclick="dynClose()" class="close-sheet">Done</button>
+        </div>
+        <div class="product-overlay">
+            <img src="/gradproducts/grad11.webp">
+            <h4>2021 Sherpa Style Pullover</h4>
+        </div>
+
+        <script>
+            function poster() {
+                if (anounce == true) {
+                    try {
+                        document.getElementById('sheetFrame').contentWindow.postMessage('schoolItem' + localStorage.getItem('dataschool'), '*')
+                    } catch (e) {
+                        document.getElementById('sheetFrame').contentWindow.postMessage('schoolItem' + localStorage.getItem('dataschool'), '*')
+                    }
+                    console.log('message posted')
+                }
+            }
+
+            function checkout() {
+
+                try {
+                    document.getElementById('sheetFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('1818' + localStorage.getItem('dataaddress'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('0404' + localStorage.getItem('dataapt'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('1994' + localStorage.getItem('datacity'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('8880' + localStorage.getItem('datastate'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('3232' + localStorage.getItem('datazip'), '*');
+
+                } catch (e) {
+                    document.getElementById('sheetFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('1818' + localStorage.getItem('dataaddress'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('0404' + localStorage.getItem('dataapt'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('1994' + localStorage.getItem('datacity'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('8880' + localStorage.getItem('datastate'), '*');
+                    document.getElementById('sheetFrame').contentWindow.postMessage('3232' + localStorage.getItem('datazip'), '*');
+                }
+
+                console.log('message posted')
+
+            }
+
+
+
+
+
+            function payment() {
+
+                try {
+                    document.getElementById('payFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('1818' + localStorage.getItem('dataaddress'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('0404' + localStorage.getItem('dataapt'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('1994' + localStorage.getItem('datacity'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('8880' + localStorage.getItem('datastate'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('3232' + localStorage.getItem('datazip'), '*');
+
+                } catch (e) {
+                    document.getElementById('sheetFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('1818' + localStorage.getItem('dataaddress'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('0404' + localStorage.getItem('dataapt'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('1994' + localStorage.getItem('datacity'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('8880' + localStorage.getItem('datastate'), '*');
+                    document.getElementById('payFrame').contentWindow.postMessage('3232' + localStorage.getItem('datazip'), '*');
+                }
+
+                console.log('message posted')
+
+            }
+
+        </script>
+
+        <iframe onload="checkout();poster();" id="sheetFrame" class="sheet-frame vivify fadeIn duration-300 delay-500"
+            src=""></iframe>
     </div>
 
-    <div class="rewarddesc vivify fadeIn duration-300">
-        <h3>Currently Unavailable</h3>
-        <p>Rewards coming soon. Thank you for your patience. </p>
+    <div class="bottom-navigation">
+        <div class="bottom-wrapper">
+            <button id="lIcon" onclick="listenNav()" class="default bottom-item ">
+                <div class="bottom-icon">
+                    <img class="default-icon bicon" id="bicon1" src="assets/home-24px.svg">
+                </div>
+                <p id="s1text">Home</p>
+            </button>
+
+            <button style="display: none;" id="eIcon" onclick="eventsNav()" class="bottom-item">
+                <div class="bottom-icon">
+                    <img id="bicon2" class="bicon" src="assets/account_circle-24px.svg">
+                </div>
+                <p id="s2text">Rewards</p>
+            </button>
+
+            <button id="cIcon" onclick="cartNav()" class="bottom-item">
+                <div class="bottom-icon">
+                    <img class="bicon" id="bicon3" src="assets/shopping_cart-24px (3).svg">
+                </div>
+                <p id="s3text">Cart</p>
+            </button>
+
+            <button id="coIcon" onclick="contactNav()" class="bottom-item">
+                <div class="bottom-icon">
+                    <img class="bicon" id="bicon4" src="assets/payment_black_24dp.svg">
+                </div>
+                <p id="s4text">Quick Pay</p>
+            </button>
+        </div>
     </div>
 
-    <div style="display: none;" class="rewarddesc vivify fadeIn duration-300">
-        <h3>Get cash towards your next purchase.</h3>
-        <p>For every $10.00 you spend in our app get 100 points towards your next app purchase. </p>
-
-        <h3>Redeem app points</h3>
-        <p>To apply your rewards points towards your purchase tap redeem anytime your at checkout. </p>
-    </div>
-</section>
-
-<div id="dyn-sheet" class="dyn-sheet ">
-<div class="sheet-title">
-    <div class="title-wrapper">
-        <h2 id="sheetTitle">An Error Occured</h2>
-    </div>
-  
-    <button onclick="dynClose()" class="close-sheet">Done</button>
-</div>
-<div class="product-overlay">
-    <img src="/gradproducts/grad11.webp">
-    <h4>2021 Sherpa Style Pullover</h4>
-</div>
-
-<script>
-    function poster(){
-        if(anounce == true){
-            try {
-                document.getElementById('sheetFrame').contentWindow.postMessage('schoolItem' + localStorage.getItem('dataschool') , '*')} catch(e) {
-    document.getElementById('sheetFrame').contentWindow.postMessage('schoolItem' + localStorage.getItem('dataschool') , '*')
-}   
-    console.log('message posted')
-}
-    }
-
-    function checkout(){
-      
-            try {
-                document.getElementById('sheetFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('1818' + localStorage.getItem('dataaddress') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('0404' + localStorage.getItem('dataapt') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('1994' + localStorage.getItem('datacity') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('8880' + localStorage.getItem('datastate') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('3232' + localStorage.getItem('datazip') , '*');
-               
-} catch(e) {
-    document.getElementById('sheetFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('1818' + localStorage.getItem('dataaddress') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('0404' + localStorage.getItem('dataapt') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('1994' + localStorage.getItem('datacity') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('8880' + localStorage.getItem('datastate') , '*');
-                document.getElementById('sheetFrame').contentWindow.postMessage('3232' + localStorage.getItem('datazip') , '*');
-}
-    
-    console.log('message posted')
-
-    }
-
-
-
-
-    
-    function payment(){
-      
-      try {
-          document.getElementById('payFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('1818' + localStorage.getItem('dataaddress') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('0404' + localStorage.getItem('dataapt') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('1994' + localStorage.getItem('datacity') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('8880' + localStorage.getItem('datastate') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('3232' + localStorage.getItem('datazip') , '*');
-         
-} catch(e) {
-document.getElementById('sheetFrame').contentWindow.postMessage('1481' + localStorage.getItem('datafname') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('8997' + localStorage.getItem('datalname') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('3321' + localStorage.getItem('dataemail') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('1567' + localStorage.getItem('datanumber') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('0031' + localStorage.getItem('dataschool') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('1818' + localStorage.getItem('dataaddress') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('0404' + localStorage.getItem('dataapt') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('1994' + localStorage.getItem('datacity') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('8880' + localStorage.getItem('datastate') , '*');
-          document.getElementById('payFrame').contentWindow.postMessage('3232' + localStorage.getItem('datazip') , '*');
-}
-
-console.log('message posted')
-
-}
-
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.getJSON('https://spa.ms/wp-json/wp/v2/posts?categories=4', function (data) {
+                var template = Handlebars.compile($('#item-templateA').html())
+                $('#gradproducts').html(template(data))
+            })
+        })
     </script>
 
-<iframe onload="checkout();poster();" id="sheetFrame" class="sheet-frame vivify fadeIn duration-300 delay-500" src=""></iframe>
-</div>
 
-<div class="bottom-navigation">
-    <div class="bottom-wrapper">
-        <button id="lIcon" onclick="listenNav()" class="default bottom-item ">
-            <div class="bottom-icon">
-                <img class="default-icon bicon" id="bicon1" src="assets/home-24px.svg">
-            </div>
-            <p id="s1text">Home</p>
-        </button>
- 
-        <button style="display: none;" id="eIcon" onclick="eventsNav()" class="bottom-item">
-         <div class="bottom-icon">
-             <img id="bicon2" class="bicon" src="assets/account_circle-24px.svg">
-         </div>
-         <p id="s2text">Rewards</p>
-     </button>
- 
-     <button id="cIcon" onclick="cartNav()" class="bottom-item">
-         <div class="bottom-icon">
-             <img class="bicon" id="bicon3" src="assets/shopping_cart-24px (3).svg">
-         </div>
-         <p id="s3text">Cart</p>
-     </button>
- 
-     <button id="coIcon" onclick="contactNav()" class="bottom-item">
-         <div class="bottom-icon">
-             <img class="bicon" id="bicon4" src="assets/payment_black_24dp.svg">
-         </div>
-         <p id="s4text">Quick Pay</p>
-     </button>
-    </div>
- </div>
-
- <script type="text/javascript">
-    $(document).ready(function () {
-      $.getJSON('https://spa.ms/wp-json/wp/v2/posts?categories=4', function (data) {
-        var template = Handlebars.compile($('#item-templateA').html())
-        $('#gradproducts').html(template(data))
-      })
-    })
-  </script>
-
-
-  <script id="item-templateA" type="text/x-handlebars-template">
+    <script id="item-templateA" type="text/x-handlebars-template">
     <button id="Grad-done" onclick="closeAll('Grad')" class="close-all-btn">Done</button>
     <button style="margin-top: -2px;" class="view-all-btn" onclick="viewAll('Grad')">View All</button>
     <div id="Grad-wrapper" class="product-wrapper">
@@ -552,16 +586,16 @@ console.log('message posted')
   </script>
 
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $.getJSON('https://spa.ms/wp-json/wp/v2/posts?categories=7', function (data) {
-        var template = Handlebars.compile($('#item-templateB').html())
-        $('#gear').html(template(data))
-      })
-    })
-  </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.getJSON('https://spa.ms/wp-json/wp/v2/posts?categories=7', function (data) {
+                var template = Handlebars.compile($('#item-templateB').html())
+                $('#gear').html(template(data))
+            })
+        })
+    </script>
 
-  <script id="item-templateB" type="text/x-handlebars-template">
+    <script id="item-templateB" type="text/x-handlebars-template">
     <div class="product-wrapper">
         <div class="product-title">
             <h2 class="vivify fadeIn duration-300">Class Gear</h2>
@@ -586,17 +620,17 @@ console.log('message posted')
   </script>
 
 
-  
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/spa/rings', function (data) {
-        var template = Handlebars.compile($('#item-templateC').html())
-        $('#rings').html(template(data.rings))
-      })
-    })
-  </script>
 
-  <script id="item-templateC" type="text/x-handlebars-template">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/spa/rings', function (data) {
+                var template = Handlebars.compile($('#item-templateC').html())
+                $('#rings').html(template(data.rings))
+            })
+        })
+    </script>
+
+    <script id="item-templateC" type="text/x-handlebars-template">
     <button id="Ring-done" onclick="closeAll('Ring')" class="close-all-btn">Done</button>
     <button class="view-all-btn" onclick="viewAll('Ring')">View All</button>
     <div id="Ring-wrapper" class="product-wrapper">
@@ -625,16 +659,16 @@ console.log('message posted')
   </script>
 
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $.getJSON('https://spa.ms/wp-json/wp/v2/posts?categories=8', function (data) {
-        var template = Handlebars.compile($('#item-templateBay').html())
-        $('#bayhigh').html(template(data))
-      })
-    })
-  </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.getJSON('https://spa.ms/wp-json/wp/v2/posts?categories=8', function (data) {
+                var template = Handlebars.compile($('#item-templateBay').html())
+                $('#bayhigh').html(template(data))
+            })
+        })
+    </script>
 
-  <script id="item-templateBay" type="text/x-handlebars-template">
+    <script id="item-templateBay" type="text/x-handlebars-template">
     <button id="Ring-done" onclick="closeAll('Ring')" class="close-all-btn">Done</button>
     <button class="view-all-btn" onclick="viewAll('Ring')">View All</button>
     <div id="Ring-wrapper" class="product-wrapper">
@@ -670,16 +704,16 @@ console.log('message posted')
       </div>   
   </script>
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/spa/ringswomens', function (data) {
-        var template = Handlebars.compile($('#item-templateL').html())
-        $('#wrings').html(template(data.ringswomens))
-      })
-    })
-  </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/spa/ringswomens', function (data) {
+                var template = Handlebars.compile($('#item-templateL').html())
+                $('#wrings').html(template(data.ringswomens))
+            })
+        })
+    </script>
 
-  <script id="item-templateL" type="text/x-handlebars-template">
+    <script id="item-templateL" type="text/x-handlebars-template">
     <button id="RingW-done" onclick="closeAll('RingW')" class="close-all-btn">Done</button>
     <button class="view-all-btn" onclick="viewAll('RingW')">View All</button>
     <div id="RingW-wrapper" class="product-wrapper ">
@@ -710,18 +744,18 @@ console.log('message posted')
 
 
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/scholastic/schools', function (data) {
-        var template = Handlebars.compile($('#item-templateE').html())
-        $('#schools').html(template(data.schools))
-      })
-    })
-  </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/scholastic/schools', function (data) {
+                var template = Handlebars.compile($('#item-templateE').html())
+                $('#schools').html(template(data.schools))
+            })
+        })
+    </script>
 
-  <script id="item-templateE" type="text/x-handlebars-template">
+    <script id="item-templateE" type="text/x-handlebars-template">
 
-  
+
 
     {{#each this}}
   
@@ -733,18 +767,18 @@ console.log('message posted')
 
 
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/scholastic/schools3', function (data) {
-        var template = Handlebars.compile($('#item-templateU').html())
-        $('#schools2').html(template(data.schools3))
-      })
-    })
-  </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.getJSON('https://api.sheety.co/1c0174d5b32dbebdf6f1e14d6ba67a4f/scholastic/schools3', function (data) {
+                var template = Handlebars.compile($('#item-templateU').html())
+                $('#schools2').html(template(data.schools3))
+            })
+        })
+    </script>
 
-  <script id="item-templateU" type="text/x-handlebars-template">
+    <script id="item-templateU" type="text/x-handlebars-template">
 
-  
+
 
     {{#each this}}
   
@@ -753,107 +787,117 @@ console.log('message posted')
       {{/each}}
   
   </script>
-  <script>
-  window.addEventListener('message', function(e) {
-  if(e.data == "addCart"){
-   document.getElementById('dyn-sheet').style.display='none'
-   document.getElementById('cartItem').innerHTML = document.getElementById('sheetTitle').innerHTML;
-   document.getElementById('cartHero').innerHTML = "Added To Cart";
-   document.getElementById('cartFrame').src="https://spa.ms/cart";
-   localStorage.setItem('cartState', 'true');
+    <script>
+        window.addEventListener('message', function (e) {
+            if (e.data == "addCart") {
+                document.getElementById('dyn-sheet').style.display = 'none'
+                document.getElementById('cartItem').innerHTML = document.getElementById('sheetTitle').innerHTML;
+                document.getElementById('cartHero').innerHTML = "Added To Cart";
+                document.getElementById('cartFrame').src = "https://spa.ms/cart";
+                localStorage.setItem('cartState', 'true');
 
-   setTimeout(function(){  
-    document.getElementById('cartConfirm').style.bottom = "96px"
-}, 500);
-setTimeout(function(){  
-    document.getElementById('cartConfirm').style.bottom = "-70px"
-}, 4500);
-cartCheck()
-   
-  }
+                setTimeout(function () {
+                    document.getElementById('cartConfirm').style.bottom = "96px"
+                }, 500);
+                setTimeout(function () {
+                    document.getElementById('cartConfirm').style.bottom = "-70px"
+                }, 4500);
+                cartCheck()
 
-  if(e.data == "checkout"){
-    dynSheet('Checkout', 'https://spa.ms/checkout/');
-    localStorage.setItem('cartState', 'false');
-  }
+            }
 
-  if(e.data == "loaded"){
-   document.getElementById('item-loader').style.display='none';
-   document.getElementById('dyn-sheet').style.display = 'block';
-  }
+            if (e.data == "checkout") {
+                dynSheet('Checkout', 'https://spa.ms/checkout/');
+                localStorage.setItem('cartState', 'false');
+            }
 
-  if(e.data == "emptyCart"){
-    localStorage.setItem('cartState', 'false');
-    cartCheck()
-  }
+            if (e.data == "loaded") {
+                document.getElementById('item-loader').style.display = 'none';
+                document.getElementById('dyn-sheet').style.display = 'block';
+            }
 
-  if(e.data.includes("reward")){
-    console.log(e.data);
-    console.log(e.data.substring(8))
-    localStorage.setItem('au2val', Math.round(e.data.substring(8) / 10 + parseInt(localStorage.getItem('au2val'))));
-  }
-});
+            if (e.data == "emptyCart") {
+                localStorage.setItem('cartState', 'false');
+                cartCheck()
+            }
 
-
-
-function cartCheck(){
-    if(localStorage.getItem('cartState') == null){
-    document.getElementById('cartEmpty').style.display= 'block';
-}
-
-if(localStorage.getItem('cartState') == 'false'){
-    document.getElementById('cartEmpty').style.display= 'block';
-}
-
-if(localStorage.getItem('cartState') == 'true'){
-    document.getElementById('cartEmpty').style.display= 'none';
-}
-}
-
-cartCheck();
+            if (e.data.includes("reward")) {
+                console.log(e.data);
+                console.log(e.data.substring(8))
+                localStorage.setItem('au2val', Math.round(e.data.substring(8) / 10 + parseInt(localStorage.getItem('au2val'))));
+            }
+        });
 
 
 
-function notification(){
-    document.getElementById('dyn-sheet').style.display='none'
-   document.getElementById('cartItem').innerHTML = document.getElementById('sheetTitle').innerHTML;
-   document.getElementById('cartFrame').src="https://spa.ms/cart";
-   document.getElementById('cartHero').innerHTML = "Added To Cart";
-   localStorage.setItem('cartState', 'true');
+        function cartCheck() {
+            if (localStorage.getItem('cartState') == null) {
+                document.getElementById('cartEmpty').style.display = 'block';
+            }
 
-   setTimeout(function(){  
-    document.getElementById('cartConfirm').style.bottom = "96px"
-}, 500);
-setTimeout(function(){  
-    document.getElementById('cartConfirm').style.bottom = "-70px"
-}, 4500);
-cartCheck()
-}
+            if (localStorage.getItem('cartState') == 'false') {
+                document.getElementById('cartEmpty').style.display = 'block';
+            }
 
-  </script>
+            if (localStorage.getItem('cartState') == 'true') {
+                document.getElementById('cartEmpty').style.display = 'none';
+            }
+        }
 
-  <div id="profileOverlay" class="profile-overlay vivify fadeInBottom duration-300">
-    <button onclick="document.getElementById('profileOverlay').style.display='none'" class="user-close">Done</button>
-      <div class="user-icon">
-          <img id="overlay-icon" src="/assets/logo.png">
-      </div>
-      <div class="profile-text">
-          <h3><span id="PfirstName"></span> <span id="PlastName"></span> </h3>
-          <p id="Pmail"></p>
-      </div>
+        cartCheck();
 
-      <div class="user-options">
-          <button onclick="document.getElementById('signup').style.display='block';document.getElementById('fname').value = localStorage.getItem('datafname');document.getElementById('setupSaveBTN').style.display='block';document.getElementById('setupBTN').style.display='none';document.getElementById('signup-text').innerHTML ='Edit Profile';document.getElementById('lname').value = localStorage.getItem('datalname');document.getElementById('email').value = localStorage.getItem('dataemail');document.getElementById('number').value = localStorage.getItem('datanumber');document.getElementById('school').value = localStorage.getItem('dataschool')" class="user-button"><h3>Profile</h3>
-        <p>School, Email, Phone Number & More.</p></button>
 
-        <button onclick="document.getElementById('shipping').style.display='block';document.getElementById('shippingBTN').style.display ='none';document.getElementById('shippingSaveBTN').style.display ='block';document.getElementById('saddress').value = localStorage.getItem('dataaddress');document.getElementById('apt').value = localStorage.getItem('dataapt');document.getElementById('city').value = localStorage.getItem('datacity');document.getElementById('state').value = localStorage.getItem('datastate');document.getElementById('zip').value = localStorage.getItem('datazip');" class="user-button"><h3>Shipping</h3>
-            <p>Edit Address, City, Zip Code, State & More.</p></button>
-      </div>
-  </div>
 
-  <script src="/accountHandler.js"></script>
-  <script>
-      document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');
-  </script>
+        function notification() {
+            document.getElementById('dyn-sheet').style.display = 'none'
+            document.getElementById('cartItem').innerHTML = document.getElementById('sheetTitle').innerHTML;
+            document.getElementById('cartFrame').src = "https://spa.ms/cart";
+            document.getElementById('cartHero').innerHTML = "Added To Cart";
+            localStorage.setItem('cartState', 'true');
+
+            setTimeout(function () {
+                document.getElementById('cartConfirm').style.bottom = "96px"
+            }, 500);
+            setTimeout(function () {
+                document.getElementById('cartConfirm').style.bottom = "-70px"
+            }, 4500);
+            cartCheck()
+        }
+
+    </script>
+
+    <div id="profileOverlay" class="profile-overlay vivify fadeInBottom duration-300">
+        <button onclick="document.getElementById('profileOverlay').style.display='none'"
+            class="user-close">Done</button>
+        <div class="user-icon">
+            <img id="overlay-icon" src="/assets/logo.png">
+        </div>
+        <div class="profile-text">
+            <h3><span id="PfirstName"></span> <span id="PlastName"></span> </h3>
+            <p id="Pmail"></p>
+        </div>
+
+        <div class="user-options">
+            <button
+                onclick="document.getElementById('signup').style.display='block';document.getElementById('fname').value = localStorage.getItem('datafname');document.getElementById('setupSaveBTN').style.display='block';document.getElementById('setupBTN').style.display='none';document.getElementById('signup-text').innerHTML ='Edit Profile';document.getElementById('lname').value = localStorage.getItem('datalname');document.getElementById('email').value = localStorage.getItem('dataemail');document.getElementById('number').value = localStorage.getItem('datanumber');document.getElementById('school').value = localStorage.getItem('dataschool')"
+                class="user-button">
+                <h3>Profile</h3>
+                <p>School, Email, Phone Number & More.</p>
+            </button>
+
+            <button
+                onclick="document.getElementById('shipping').style.display='block';document.getElementById('shippingBTN').style.display ='none';document.getElementById('shippingSaveBTN').style.display ='block';document.getElementById('saddress').value = localStorage.getItem('dataaddress');document.getElementById('apt').value = localStorage.getItem('dataapt');document.getElementById('city').value = localStorage.getItem('datacity');document.getElementById('state').value = localStorage.getItem('datastate');document.getElementById('zip').value = localStorage.getItem('datazip');"
+                class="user-button">
+                <h3>Shipping</h3>
+                <p>Edit Address, City, Zip Code, State & More.</p>
+            </button>
+        </div>
+    </div>
+
+    <script src="/accountHandler.js"></script>
+    <script>
+        document.getElementById('rewardUserItem').innerHTML = localStorage.getItem('au2val');
+    </script>
 </body>
+
 </html>
